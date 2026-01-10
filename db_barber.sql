@@ -16,10 +16,12 @@
 
 
 -- Copiando estrutura do banco de dados para db_barber
+DROP DATABASE IF EXISTS `db_barber`;
 CREATE DATABASE IF NOT EXISTS `db_barber` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `db_barber`;
 
 -- Copiando estrutura para tabela db_barber.tb_agendamento
+DROP TABLE IF EXISTS `tb_agendamento`;
 CREATE TABLE IF NOT EXISTS `tb_agendamento` (
   `id_agendamento` int NOT NULL AUTO_INCREMENT,
   `clienteid` int NOT NULL,
@@ -33,25 +35,27 @@ CREATE TABLE IF NOT EXISTS `tb_agendamento` (
   CONSTRAINT `servicoid` FOREIGN KEY (`servicoid`) REFERENCES `tb_servicos` (`servicoid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Copiando dados para a tabela db_barber.tb_agendamento: ~0 rows (aproximadamente)
-DELETE FROM `tb_agendamento`;
+-- Exportação de dados foi desmarcado.
 
 -- Copiando estrutura para tabela db_barber.tb_clientes
+DROP TABLE IF EXISTS `tb_clientes`;
 CREATE TABLE IF NOT EXISTS `tb_clientes` (
   `id` int NOT NULL AUTO_INCREMENT,
   `nome` varchar(100) NOT NULL,
   `telefone` varchar(30) NOT NULL,
   `email` varchar(60) NOT NULL,
+  `ativo` int DEFAULT '1',
+  `data_cadastro` datetime DEFAULT (now()),
   PRIMARY KEY (`id`),
   UNIQUE KEY `telefone` (`telefone`),
   UNIQUE KEY `email` (`email`),
   KEY `nome` (`nome`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Copiando dados para a tabela db_barber.tb_clientes: ~0 rows (aproximadamente)
-DELETE FROM `tb_clientes`;
+-- Exportação de dados foi desmarcado.
 
 -- Copiando estrutura para tabela db_barber.tb_servicos
+DROP TABLE IF EXISTS `tb_servicos`;
 CREATE TABLE IF NOT EXISTS `tb_servicos` (
   `servicoid` int NOT NULL AUTO_INCREMENT,
   `descricao` varchar(50) NOT NULL,
@@ -60,8 +64,7 @@ CREATE TABLE IF NOT EXISTS `tb_servicos` (
   PRIMARY KEY (`servicoid`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Copiando dados para a tabela db_barber.tb_servicos: ~0 rows (aproximadamente)
-DELETE FROM `tb_servicos`;
+-- Exportação de dados foi desmarcado.
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
