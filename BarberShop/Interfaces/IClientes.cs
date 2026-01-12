@@ -12,6 +12,6 @@ namespace BarberShop.Interfaces
         void Deletar_Clientes(int codigo_cliente);
         void Inserir_Clientes(Clientes clientes);
         DataTable Selecionar_Clientes();
-        DataTable Selecionar_Clientes_porID(int id);
+        DataTable Selecionar_Clientes_porID(int Id);
     }
 }
