@@ -5,12 +5,12 @@ using System.Threading.Tasks;
 
 namespace BarberShop.Models
 {
-    public class Servicos
+    public class Funcionarios
     {
         public int Id { get; set; }
         public string Nome { get; set; }
-        public string Descricao { get; set; }
-        public double Preco { get; set; }
-        public bool Status { get; set; }
+        public string Telefone { get; set; }
+        public double Comissao { get; set; }
+        public bool Ativo { get; set; }
     }
 }
