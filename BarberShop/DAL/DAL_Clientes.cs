@@ -77,12 +77,12 @@ namespace BarberShop.DAL
                 comando.CommandText = _sql;
                 comando.Connection = _conexao;
 
-                comando.Parameters.AddWithValue("id", clientes.id);
-                comando.Parameters.AddWithValue("nome", clientes.nome);
-                comando.Parameters.AddWithValue("email", clientes.email);
-                comando.Parameters.AddWithValue("telefone", clientes.telefone);
-                comando.Parameters.AddWithValue("ativo", clientes.ativo);
-                comando.Parameters.AddWithValue("data_cadastro", clientes.data_cadastro);
+                comando.Parameters.AddWithValue("id", clientes.Id);
+                comando.Parameters.AddWithValue("nome", clientes.Nome);
+                comando.Parameters.AddWithValue("email", clientes.Email);
+                comando.Parameters.AddWithValue("telefone", clientes.Telefone);
+                comando.Parameters.AddWithValue("ativo", clientes.Ativo);
+                comando.Parameters.AddWithValue("data_cadastro", clientes.DataCadastro);
 
                 comando.Prepare();
                 comando.ExecuteNonQuery();
