@@ -22,7 +22,7 @@ namespace BarberShop.DAL
             sql.Editar(f);
         }
 
-        public bool DeletarFuncionario(int Id)
+        public void DeletarFuncionario(int Id)
         {
             return sql.Deletar(Id);
         }
