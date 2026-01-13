@@ -11,8 +11,8 @@ namespace BarberUp.Interface
     {
         public void InserirFuncionario(Funcionarios f);
         public void AtualizarFuncionario(Funcionarios f);
-        bool DeletarFuncionario(int Id);
-        DataTable VerificarFuncionario(int Id);
+        public void DeletarFuncionario(int Id);
+        DataTable VerificarFuncionario();
         DataTable VerificarFuncionario_porId(int Id);
     }
 }

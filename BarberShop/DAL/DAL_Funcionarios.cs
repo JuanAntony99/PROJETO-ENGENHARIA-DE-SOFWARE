@@ -25,9 +25,43 @@ namespace BarberShop.DAL
             throw new NotImplementedException();
         }
 
-        public bool DeletarFuncionario(int Id)
+        public void DeletarFuncionario(int Id)
         {
-            throw new NotImplementedException();
+            try 
+            { 
+                _conexao.Open();
+
+                string sql = "DELETE FROM tb_funcionarios WHERE Id=@id";
+                MySqlCommand comando = new MySqlCommand(sql, _conexao);
+
+                comando.CommandText = sql;
+                comando.Connection = _conexao;
+
+                comando.Parameters.AddWithValue("Id", Id);
+
+                comando.Prepare();
+                int linhas = comando.ExecuteNonQuery();
+
+                if (linhas == 1)
+                {
+                    MessageBox.Show($"{name} excluído com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                if (linhas == 0)
+                {
+                    MessageBox.Show("O Id informado não existe.", $"Erro ao excluir {name}", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, $"Erro ao excluir {name}", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (_conexao.State == ConnectionState.Open)
+                {
+                    _conexao.Close();
+                }
+            }
         }
 
         public void InserirFuncionario(Funcionarios f)
@@ -43,12 +77,57 @@ namespace BarberShop.DAL
                 comando.Connection = _conexao;
 
                 comando.Parameters.AddWithValue("@nome", f.Nome);
+                comando.Parameters.AddWithValue("@telefone", f.Telefone);
+                comando.Parameters.AddWithValue("comissao", f.Comissao);
+                comando.Parameters.AddWithValue("@ativo", f.Ativo);
+
+                comando.Prepare();
+                comando.ExecuteNonQuery();
+
+                MessageBox.Show($"{name} inserido com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show(ex.Message, $"Erro ao inserir {name}", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (_conexao.State == ConnectionState.Open)
+                {
+                    _conexao.Close();
+                }
             }
         }
 
-        public DataTable VerificarFuncionario(int Id)
+        public DataTable VerificarFuncionario()
         {
-            throw new NotImplementedException();
+            try
+            {
+                DataTable dt = new DataTable();
+                string sql = "SELECT * FROM tb_funcionarios";
+
+                MySqlCommand comando = new MySqlCommand(sql, _conexao);
+
+                _conexao.Open();
+                comando.ExecuteNonQuery();
+
+                MySqlDataAdapter sql_relacao = new MySqlDataAdapter(comando);
+                sql_relacao.Fill(dt);
+
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+            finally
+            {
+                if (_conexao.State == ConnectionState.Open)
+                {
+                    _conexao.Close();
+                }
+            }
         }
 
         public DataTable VerificarFuncionario_porId(int Id)
