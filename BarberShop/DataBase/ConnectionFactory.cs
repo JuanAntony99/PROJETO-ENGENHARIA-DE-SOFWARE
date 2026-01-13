@@ -1,16 +1,19 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Configuration;
 using System.Data.SqlClient;
+using System.Text;
 
 namespace BarberShop.DataBase
 {
     public class ConnectionFactory
     {
-        public MySqlConnection GetConnection()
+        public MySqlConnection getConection()
         {
-
+            string conexao = ConfigurationManager.ConnectionStrings["conexao_dbprojetoengenhariadesoftware"].ConnectionString;
+            return new MySqlConnection(conexao);
         }
-        
+
     }
 }

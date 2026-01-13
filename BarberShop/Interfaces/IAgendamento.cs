@@ -12,7 +12,7 @@ namespace BarberUp.Interface
         public void InserirAgendamento(Agendamento a);
         public void AtualizarAgendamento(Agendamento a);
         bool DeletarAgendamento(int Id);
-        DataTable VerificarAgendamento(int Id);
+        DataTable VerificarAgendamento();
         DataTable VerificarAgendamento_porId(int Id);
     }
 }

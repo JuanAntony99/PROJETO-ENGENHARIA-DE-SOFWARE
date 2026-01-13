@@ -9,36 +9,35 @@ namespace BarberShop.DAL
 {
     public class DAL_Servicos : IServicos
     {
+        SqlHelper sql = new SqlHelper(
+            "Servico",
+            "TB_SERVICOS",
+            "Nome=@Nome,Descricao=@Descricao,Preco=@Preco,Duracao=@Duracao,Ativo=@Ativo",
+            "(Nome,Descricao,Preco,Duracao,Ativo) VALUES (@Nome,@Descricao,@Preco,@Duracao,@Ativo)"
+        );
         public void AtualizarServico(Servicos s)
         {
-            throw new NotImplementedException();
+            sql.Editar(s);
         }
 
         public bool DeletarServico(int Id)
         {
-            throw new NotImplementedException();
+            return sql.Deletar(Id);
         }
 
         public void InserirServico(Servicos s)
         {
-            try
-            {
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, $"Erro ao inserir {name}", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            sql.Inserir(s);
         }
 
-        public DataTable VerificarServico(int Id)
+        public DataTable VerificarServico()
         {
-            throw new NotImplementedException();
+            return sql.Selecionar();
         }
 
         public DataTable VerificarServico_porId(int Id)
         {
-            throw new NotImplementedException();
+            return sql.Selecionar_porID(Id);
         }
     }
 }

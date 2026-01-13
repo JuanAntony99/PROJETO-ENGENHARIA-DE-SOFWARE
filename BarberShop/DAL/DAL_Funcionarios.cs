@@ -11,49 +11,35 @@ namespace BarberShop.DAL
 {
     public class DAL_Funcionarios : IFuncionarios
     {
-        string name = "Funcionário";
-
-        private MySqlConnection _conexao;
-        MySqlCommand comando = new MySqlCommand();
-        public DAL_Funcionarios()
-        {
-            this._conexao = new Connection_Factory().getConection();
-        }
-
+        SqlHelper sql = new SqlHelper(
+            "Funcionario",
+            "TB_FUNCIONARIOS",
+            "Nome=@Nome,Telefone=@Telefone,Comissao=@Comissao,Ativo=@Ativo",
+            "(Nome,Telefone,Comissao,Ativo) VALUES (@Nome,@Telefone,@Comissao,@Ativo)"
+        );
         public void AtualizarFuncionario(Funcionarios f)
         {
-            throw new NotImplementedException();
+            sql.Editar(f);
         }
 
         public bool DeletarFuncionario(int Id)
         {
-            throw new NotImplementedException();
+            return sql.Deletar(Id);
         }
 
         public void InserirFuncionario(Funcionarios f)
         {
-            try
-            { 
-                _conexao.Open();
-
-                string sql = "INSERT INTO tb_funcionarios (Nome, Telefone, Comissao, Ativo) VALUES (@nome, @telefone, @Comissao, @Ativo)";
-                comando = new MySqlCommand(sql, _conexao);
-
-                comando.CommandText = sql;
-                comando.Connection = _conexao;
-
-                comando.Parameters.AddWithValue("@nome", f.Nome);
-            }
+            sql.Inserir(f);
         }
 
-        public DataTable VerificarFuncionario(int Id)
+        public DataTable VerificarFuncionario()
         {
-            throw new NotImplementedException();
+            return sql.Selecionar();
         }
 
         public DataTable VerificarFuncionario_porId(int Id)
         {
-            throw new NotImplementedException();
+            return sql.Selecionar_porID(Id);
         }
     }
 }

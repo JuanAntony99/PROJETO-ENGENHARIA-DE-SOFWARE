@@ -9,29 +9,36 @@ namespace BarberShop.DAL
 {
     public class DAL_Agendamento : IAgendamento
     {
+        SqlHelper sql = new SqlHelper(
+            "Agendamento",
+            "TB_AGENDAMENTOS",
+            "Cliente_id=@Cliente_id,datahora_agendamento=@datahora_agendamento,Servico_ID=@Servico_ID,Funcionario_ID=@Funcionario_ID,concluido=@concluido",
+            "(Cliente_id,datahora_agendamento,Servico_ID,Funcionario_ID,concluido) VALUES (@Cliente_id,@datahora_agendamento,@Servico_ID,@Funcionario_ID,@concluido)"
+        );
+
         public void AtualizarAgendamento(Agendamento a)
         {
-            throw new NotImplementedException();
+            sql.Editar(a);
         }
 
         public bool DeletarAgendamento(int Id)
         {
-            throw new NotImplementedException();
+            return sql.Deletar(Id);
         }
 
         public void InserirAgendamento(Agendamento a)
         {
-            throw new NotImplementedException();
+            sql.Inserir(a);
         }
 
-        public DataTable VerificarAgendamento(int Id)
+        public DataTable VerificarAgendamento()
         {
-            throw new NotImplementedException();
+            return sql.Selecionar();
         }
 
         public DataTable VerificarAgendamento_porId(int Id)
         {
-            throw new NotImplementedException();
+            return sql.Selecionar_porID(Id);
         }
     }
 }

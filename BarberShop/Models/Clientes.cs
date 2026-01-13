@@ -11,6 +11,6 @@ namespace BarberShop.Models
         public string? Telefone { get; set; }
         public string? Email { get; set; }
         public int Ativo { get; set; }
-        public DateTime DataCadastro { get; set; }
+        public DateTime Data_Cadastro { get; set; }
     }
 }

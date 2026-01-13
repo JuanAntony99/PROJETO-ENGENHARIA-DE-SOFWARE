@@ -12,7 +12,7 @@ namespace BarberUp.Interface
         public void InserirServico(Servicos s);
         public void AtualizarServico(Servicos s);
         bool DeletarServico(int Id);
-        DataTable VerificarServico(int Id);
+        DataTable VerificarServico();
         DataTable VerificarServico_porId(int Id);
     }
 }

@@ -8,10 +8,10 @@ namespace BarberShop.Interfaces
 {
     internal interface IClientes
     {
-        void Editar_Clientes(Clientes clientes);
-        void Deletar_Clientes(int codigo_cliente);
-        void Inserir_Clientes(Clientes clientes);
-        DataTable Selecionar_Clientes();
-        DataTable Selecionar_Clientes_porID(int Id);
+        void AtualizarClientes(Clientes c);
+        void DeletarClientes(int Id);
+        void InserirClientes(Clientes c);
+        DataTable VerificarClientes();
+        DataTable VerificarClientes_porID(int Id);
     }
 }
