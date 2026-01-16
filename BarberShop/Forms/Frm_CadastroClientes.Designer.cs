@@ -44,6 +44,11 @@
             pictureBox1 = new PictureBox();
             cbx_inativo = new CheckBox();
             pictureBox2 = new PictureBox();
+            txt_id = new TextBox();
+            lbl_id = new Label();
+            btn_listar = new Button();
+            btn_editar = new Button();
+            btn_limparCampos = new Button();
             ((System.ComponentModel.ISupportInitialize)dtg_banco).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -119,14 +124,14 @@
             // 
             // dtg_banco
             // 
-            dtg_banco.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             resources.ApplyResources(dtg_banco, "dtg_banco");
+            dtg_banco.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtg_banco.Name = "dtg_banco";
             // 
             // pictureBox1
             // 
-            pictureBox1.BackColor = Color.Black;
             resources.ApplyResources(pictureBox1, "pictureBox1");
+            pictureBox1.BackColor = Color.Black;
             pictureBox1.Name = "pictureBox1";
             pictureBox1.TabStop = false;
             // 
@@ -140,10 +145,41 @@
             // 
             // pictureBox2
             // 
-            pictureBox2.BackColor = Color.Transparent;
             resources.ApplyResources(pictureBox2, "pictureBox2");
+            pictureBox2.BackColor = Color.Transparent;
             pictureBox2.Name = "pictureBox2";
             pictureBox2.TabStop = false;
+            // 
+            // txt_id
+            // 
+            resources.ApplyResources(txt_id, "txt_id");
+            txt_id.Name = "txt_id";
+            // 
+            // lbl_id
+            // 
+            resources.ApplyResources(lbl_id, "lbl_id");
+            lbl_id.BackColor = Color.Transparent;
+            lbl_id.ForeColor = Color.White;
+            lbl_id.Name = "lbl_id";
+            // 
+            // btn_listar
+            // 
+            resources.ApplyResources(btn_listar, "btn_listar");
+            btn_listar.Name = "btn_listar";
+            btn_listar.UseVisualStyleBackColor = true;
+            // 
+            // btn_editar
+            // 
+            resources.ApplyResources(btn_editar, "btn_editar");
+            btn_editar.Name = "btn_editar";
+            btn_editar.UseVisualStyleBackColor = false;
+            // 
+            // btn_limparCampos
+            // 
+            resources.ApplyResources(btn_limparCampos, "btn_limparCampos");
+            btn_limparCampos.Name = "btn_limparCampos";
+            btn_limparCampos.UseVisualStyleBackColor = true;
+            btn_limparCampos.Click += btn_limparCampos_Click;
             // 
             // Frm_CadastroClientes
             // 
@@ -154,6 +190,9 @@
             Controls.Add(cbx_inativo);
             Controls.Add(pictureBox1);
             Controls.Add(dtg_banco);
+            Controls.Add(btn_editar);
+            Controls.Add(btn_limparCampos);
+            Controls.Add(btn_listar);
             Controls.Add(btn_deletar);
             Controls.Add(btn_salvar);
             Controls.Add(label4);
@@ -161,9 +200,11 @@
             Controls.Add(label2);
             Controls.Add(label3);
             Controls.Add(cbx_ativo);
+            Controls.Add(lbl_id);
             Controls.Add(label1);
             Controls.Add(txt_telefone);
             Controls.Add(txt_email);
+            Controls.Add(txt_id);
             Controls.Add(txt_nome);
             Name = "Frm_CadastroClientes";
             ((System.ComponentModel.ISupportInitialize)dtg_banco).EndInit();
@@ -191,6 +232,11 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.CheckBox cbx_inativo;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private TextBox txt_id;
+        private Label lbl_id;
+        private Button btn_listar;
+        private Button btn_editar;
+        private Button btn_limparCampos;
     }
 }
 

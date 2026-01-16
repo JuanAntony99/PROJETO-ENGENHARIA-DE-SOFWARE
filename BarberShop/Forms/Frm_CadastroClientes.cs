@@ -16,5 +16,18 @@ namespace projeto
         {
             InitializeComponent();
         }
+
+        private void btn_limparCampos_Click(object sender, EventArgs e)
+        {
+            LimparCampos();
+        }
+        private void LimparCampos()
+        {
+            txt_id.Text = string.Empty;
+            txt_nome.Text = string.Empty;
+            txt_email.Text = string.Empty;
+            txt_telefone.Text = string.Empty;
+            txt_cpf.Text = string.Empty;
+        }
     }
 }
