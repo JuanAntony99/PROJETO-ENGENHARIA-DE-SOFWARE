@@ -36,8 +36,6 @@
             cbx_ativo = new CheckBox();
             label3 = new Label();
             label2 = new Label();
-            txt_cpf = new TextBox();
-            label4 = new Label();
             btn_salvar = new Button();
             btn_deletar = new Button();
             dtg_banco = new DataGridView();
@@ -49,6 +47,8 @@
             btn_listar = new Button();
             btn_editar = new Button();
             btn_limparCampos = new Button();
+            lbl_dataCadastro = new Label();
+            dtp_dataCadastro = new DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)dtg_banco).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -98,23 +98,12 @@
             label2.ForeColor = Color.White;
             label2.Name = "label2";
             // 
-            // txt_cpf
-            // 
-            resources.ApplyResources(txt_cpf, "txt_cpf");
-            txt_cpf.Name = "txt_cpf";
-            // 
-            // label4
-            // 
-            resources.ApplyResources(label4, "label4");
-            label4.BackColor = Color.Transparent;
-            label4.ForeColor = Color.White;
-            label4.Name = "label4";
-            // 
             // btn_salvar
             // 
             resources.ApplyResources(btn_salvar, "btn_salvar");
             btn_salvar.Name = "btn_salvar";
             btn_salvar.UseVisualStyleBackColor = true;
+            btn_salvar.Click += btn_salvar_Click;
             // 
             // btn_deletar
             // 
@@ -181,11 +170,24 @@
             btn_limparCampos.UseVisualStyleBackColor = true;
             btn_limparCampos.Click += btn_limparCampos_Click;
             // 
+            // lbl_dataCadastro
+            // 
+            resources.ApplyResources(lbl_dataCadastro, "lbl_dataCadastro");
+            lbl_dataCadastro.BackColor = Color.Transparent;
+            lbl_dataCadastro.ForeColor = Color.White;
+            lbl_dataCadastro.Name = "lbl_dataCadastro";
+            // 
+            // dtp_dataCadastro
+            // 
+            resources.ApplyResources(dtp_dataCadastro, "dtp_dataCadastro");
+            dtp_dataCadastro.Name = "dtp_dataCadastro";
+            // 
             // Frm_CadastroClientes
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
+            Controls.Add(dtp_dataCadastro);
             Controls.Add(pictureBox2);
             Controls.Add(cbx_inativo);
             Controls.Add(pictureBox1);
@@ -195,8 +197,7 @@
             Controls.Add(btn_listar);
             Controls.Add(btn_deletar);
             Controls.Add(btn_salvar);
-            Controls.Add(label4);
-            Controls.Add(txt_cpf);
+            Controls.Add(lbl_dataCadastro);
             Controls.Add(label2);
             Controls.Add(label3);
             Controls.Add(cbx_ativo);
@@ -224,8 +225,6 @@
         private System.Windows.Forms.CheckBox cbx_ativo;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txt_cpf;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btn_salvar;
         private System.Windows.Forms.Button btn_deletar;
         private System.Windows.Forms.DataGridView dtg_banco;
@@ -237,6 +236,8 @@
         private Button btn_listar;
         private Button btn_editar;
         private Button btn_limparCampos;
+        private Label lbl_dataCadastro;
+        private DateTimePicker dtp_dataCadastro;
     }
 }
 
