@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BarberShop.DAL;
+using BarberShop.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,14 +17,38 @@ namespace BarberShop.Forms
             InitializeComponent();
         }
 
-        private void label4_Click(object sender, EventArgs e)
+        private void btn_limparCampos_Click(object sender, EventArgs e)
         {
-
+            LimparCampos();
         }
 
-        private void Frm_Serviços_Load(object sender, EventArgs e)
+        private void LimparCampos()
         {
+            txt_id.Text = string.Empty;
+            txt_nome.Text = string.Empty;
+            txt_preco.Text = string.Empty;
+            txt_duracao.Text = string.Empty;
+        }
 
+        private void btn_salvar_Click(object sender, EventArgs e)
+        {
+            SalvarServico();
+        }
+        private void SalvarServico()
+        {
+            if (string.IsNullOrWhiteSpace(txt_nome.Text))
+            {
+                MessageBox.Show("A descrição é de preenchimento obrigatório", "Informar descrição", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txt_nome.Focus();
+                return;
+            }
+
+            Servicos s = new Servicos();
+            DAL_Servicos dp = new DAL_Servicos();
+
+            s.Nome = txt_nome.Text;
+            
+            
         }
     }
 }

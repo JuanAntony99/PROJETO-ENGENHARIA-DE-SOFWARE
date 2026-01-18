@@ -29,70 +29,38 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Serviços));
-            dataGridView1 = new DataGridView();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
+            dgv_tabelaServicos = new DataGridView();
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
+            lbl_id = new Label();
+            lbl_preco = new Label();
+            lbl_duracao = new Label();
+            txt_preco = new TextBox();
+            txt_id = new TextBox();
             label5 = new Label();
-            textBox4 = new TextBox();
+            txt_duracao = new TextBox();
             mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
-            button4 = new Button();
             pictureBox3 = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            lbl_nome = new Label();
+            txt_nome = new TextBox();
+            btn_editar = new Button();
+            btn_limparCampos = new Button();
+            btn_listar = new Button();
+            btn_deletar = new Button();
+            btn_salvar = new Button();
+            ((System.ComponentModel.ISupportInitialize)dgv_tabelaServicos).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
             // 
-            // dataGridView1
+            // dgv_tabelaServicos
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 57);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(286, 381);
-            dataGridView1.TabIndex = 0;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.Green;
-            button1.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.Location = new Point(312, 413);
-            button1.Name = "button1";
-            button1.Size = new Size(107, 25);
-            button1.TabIndex = 1;
-            button1.Text = "Adicionar";
-            button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.Maroon;
-            button2.Font = new Font("Times New Roman", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.Location = new Point(312, 382);
-            button2.Name = "button2";
-            button2.Size = new Size(107, 25);
-            button2.TabIndex = 2;
-            button2.Text = "Deletar";
-            button2.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            button3.BackColor = Color.Teal;
-            button3.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button3.Location = new Point(312, 351);
-            button3.Name = "button3";
-            button3.Size = new Size(107, 25);
-            button3.TabIndex = 3;
-            button3.Text = "Editar";
-            button3.UseVisualStyleBackColor = false;
+            dgv_tabelaServicos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgv_tabelaServicos.Location = new Point(12, 57);
+            dgv_tabelaServicos.Name = "dgv_tabelaServicos";
+            dgv_tabelaServicos.Size = new Size(286, 381);
+            dgv_tabelaServicos.TabIndex = 0;
             // 
             // pictureBox1
             // 
@@ -113,75 +81,55 @@
             pictureBox2.TabIndex = 5;
             pictureBox2.TabStop = false;
             // 
-            // label1
+            // lbl_id
             // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Times New Roman", 12F);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(312, 70);
-            label1.Name = "label1";
-            label1.Size = new Size(25, 19);
-            label1.TabIndex = 6;
-            label1.Text = "ID";
+            lbl_id.AutoSize = true;
+            lbl_id.BackColor = Color.Transparent;
+            lbl_id.Font = new Font("Times New Roman", 12F);
+            lbl_id.ForeColor = Color.White;
+            lbl_id.Location = new Point(312, 70);
+            lbl_id.Name = "lbl_id";
+            lbl_id.Size = new Size(25, 19);
+            lbl_id.TabIndex = 6;
+            lbl_id.Text = "ID";
             // 
-            // label2
+            // lbl_preco
             // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Times New Roman", 12F);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(313, 176);
-            label2.Name = "label2";
-            label2.Size = new Size(45, 19);
-            label2.TabIndex = 7;
-            label2.Text = "Preço";
+            lbl_preco.AutoSize = true;
+            lbl_preco.BackColor = Color.Transparent;
+            lbl_preco.Font = new Font("Times New Roman", 12F);
+            lbl_preco.ForeColor = Color.White;
+            lbl_preco.Location = new Point(313, 176);
+            lbl_preco.Name = "lbl_preco";
+            lbl_preco.Size = new Size(45, 19);
+            lbl_preco.TabIndex = 7;
+            lbl_preco.Text = "Preço";
             // 
-            // label3
+            // lbl_duracao
             // 
-            label3.AutoSize = true;
-            label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Times New Roman", 12F);
-            label3.ForeColor = Color.White;
-            label3.Location = new Point(315, 231);
-            label3.Name = "label3";
-            label3.Size = new Size(61, 19);
-            label3.TabIndex = 8;
-            label3.Text = "Duração";
+            lbl_duracao.AutoSize = true;
+            lbl_duracao.BackColor = Color.Transparent;
+            lbl_duracao.Font = new Font("Times New Roman", 12F);
+            lbl_duracao.ForeColor = Color.White;
+            lbl_duracao.Location = new Point(315, 231);
+            lbl_duracao.Name = "lbl_duracao";
+            lbl_duracao.Size = new Size(61, 19);
+            lbl_duracao.TabIndex = 8;
+            lbl_duracao.Text = "Duração";
             // 
-            // label4
+            // txt_preco
             // 
-            label4.AutoSize = true;
-            label4.BackColor = Color.Transparent;
-            label4.Font = new Font("Times New Roman", 12F);
-            label4.ForeColor = Color.White;
-            label4.Location = new Point(313, 122);
-            label4.Name = "label4";
-            label4.Size = new Size(47, 19);
-            label4.TabIndex = 9;
-            label4.Text = "Nome";
-            label4.Click += label4_Click;
+            txt_preco.Location = new Point(316, 200);
+            txt_preco.Name = "txt_preco";
+            txt_preco.Size = new Size(311, 23);
+            txt_preco.TabIndex = 10;
             // 
-            // textBox1
+            // txt_id
             // 
-            textBox1.Location = new Point(316, 200);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(311, 23);
-            textBox1.TabIndex = 10;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(315, 146);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(311, 23);
-            textBox2.TabIndex = 11;
-            // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(315, 94);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(218, 23);
-            textBox3.TabIndex = 12;
+            txt_id.Location = new Point(315, 94);
+            txt_id.Name = "txt_id";
+            txt_id.Size = new Size(218, 23);
+            txt_id.TabIndex = 12;
             // 
             // label5
             // 
@@ -195,12 +143,12 @@
             label5.TabIndex = 13;
             label5.Text = "Tabela de Serviços";
             // 
-            // textBox4
+            // txt_duracao
             // 
-            textBox4.Location = new Point(317, 256);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(311, 23);
-            textBox4.TabIndex = 14;
+            txt_duracao.Location = new Point(317, 256);
+            txt_duracao.Name = "txt_duracao";
+            txt_duracao.Size = new Size(311, 23);
+            txt_duracao.TabIndex = 14;
             // 
             // mySqlCommand1
             // 
@@ -208,17 +156,6 @@
             mySqlCommand1.Connection = null;
             mySqlCommand1.EnableCaching = false;
             mySqlCommand1.Transaction = null;
-            // 
-            // button4
-            // 
-            button4.BackColor = SystemColors.ControlDarkDark;
-            button4.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button4.Location = new Point(312, 320);
-            button4.Name = "button4";
-            button4.Size = new Size(107, 25);
-            button4.TabIndex = 15;
-            button4.Text = "Listar";
-            button4.UseVisualStyleBackColor = false;
             // 
             // pictureBox3
             // 
@@ -231,6 +168,87 @@
             pictureBox3.TabIndex = 16;
             pictureBox3.TabStop = false;
             // 
+            // lbl_nome
+            // 
+            lbl_nome.AutoSize = true;
+            lbl_nome.BackColor = Color.Transparent;
+            lbl_nome.Font = new Font("Times New Roman", 12F);
+            lbl_nome.ForeColor = Color.White;
+            lbl_nome.Location = new Point(313, 122);
+            lbl_nome.Name = "lbl_nome";
+            lbl_nome.Size = new Size(47, 19);
+            lbl_nome.TabIndex = 9;
+            lbl_nome.Text = "Nome";
+            // 
+            // txt_nome
+            // 
+            txt_nome.Location = new Point(315, 146);
+            txt_nome.Name = "txt_nome";
+            txt_nome.Size = new Size(311, 23);
+            txt_nome.TabIndex = 11;
+            // 
+            // btn_editar
+            // 
+            btn_editar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btn_editar.ImeMode = ImeMode.NoControl;
+            btn_editar.Location = new Point(483, 357);
+            btn_editar.Margin = new Padding(4, 3, 4, 3);
+            btn_editar.Name = "btn_editar";
+            btn_editar.Size = new Size(92, 29);
+            btn_editar.TabIndex = 20;
+            btn_editar.Text = "Editar";
+            btn_editar.UseVisualStyleBackColor = false;
+            // 
+            // btn_limparCampos
+            // 
+            btn_limparCampos.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btn_limparCampos.ImeMode = ImeMode.NoControl;
+            btn_limparCampos.Location = new Point(403, 394);
+            btn_limparCampos.Margin = new Padding(4, 3, 4, 3);
+            btn_limparCampos.Name = "btn_limparCampos";
+            btn_limparCampos.Size = new Size(119, 29);
+            btn_limparCampos.TabIndex = 17;
+            btn_limparCampos.Text = "Limpar Campos";
+            btn_limparCampos.UseVisualStyleBackColor = true;
+            btn_limparCampos.Click += btn_limparCampos_Click;
+            // 
+            // btn_listar
+            // 
+            btn_listar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btn_listar.ImeMode = ImeMode.NoControl;
+            btn_listar.Location = new Point(358, 356);
+            btn_listar.Margin = new Padding(4, 3, 4, 3);
+            btn_listar.Name = "btn_listar";
+            btn_listar.Size = new Size(93, 29);
+            btn_listar.TabIndex = 18;
+            btn_listar.Text = "Listar";
+            btn_listar.UseVisualStyleBackColor = true;
+            // 
+            // btn_deletar
+            // 
+            btn_deletar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btn_deletar.ImeMode = ImeMode.NoControl;
+            btn_deletar.Location = new Point(483, 313);
+            btn_deletar.Margin = new Padding(4, 3, 4, 3);
+            btn_deletar.Name = "btn_deletar";
+            btn_deletar.Size = new Size(92, 29);
+            btn_deletar.TabIndex = 21;
+            btn_deletar.Text = "Deletar";
+            btn_deletar.UseVisualStyleBackColor = true;
+            // 
+            // btn_salvar
+            // 
+            btn_salvar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btn_salvar.ImeMode = ImeMode.NoControl;
+            btn_salvar.Location = new Point(358, 312);
+            btn_salvar.Margin = new Padding(4, 3, 4, 3);
+            btn_salvar.Name = "btn_salvar";
+            btn_salvar.Size = new Size(93, 29);
+            btn_salvar.TabIndex = 19;
+            btn_salvar.Text = "Salvar";
+            btn_salvar.UseVisualStyleBackColor = true;
+            btn_salvar.Click += btn_salvar_Click;
+            // 
             // Frm_Serviços
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -238,27 +256,27 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 482);
+            Controls.Add(btn_editar);
+            Controls.Add(btn_limparCampos);
+            Controls.Add(btn_listar);
+            Controls.Add(btn_deletar);
+            Controls.Add(btn_salvar);
             Controls.Add(pictureBox3);
-            Controls.Add(button4);
-            Controls.Add(textBox4);
+            Controls.Add(txt_duracao);
             Controls.Add(label5);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
+            Controls.Add(txt_id);
+            Controls.Add(txt_nome);
+            Controls.Add(txt_preco);
+            Controls.Add(lbl_nome);
+            Controls.Add(lbl_duracao);
+            Controls.Add(lbl_preco);
+            Controls.Add(lbl_id);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgv_tabelaServicos);
             Name = "Frm_Serviços";
             Text = " ";
-            Load += Frm_Serviços_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgv_tabelaServicos).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
@@ -268,23 +286,24 @@
 
         #endregion
 
-        private DataGridView dataGridView1;
-        private Button button1;
-        private Button button2;
-        private Button button3;
+        private DataGridView dgv_tabelaServicos;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
-        private Label label1;
-        private Label label2;
-        private Label label3;
-        private Label label4;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
+        private Label lbl_id;
+        private Label lbl_preco;
+        private Label lbl_duracao;
+        private TextBox txt_preco;
+        private TextBox txt_id;
         private Label label5;
-        private TextBox textBox4;
+        private TextBox txt_duracao;
         private MySql.Data.MySqlClient.MySqlCommand mySqlCommand1;
-        private Button button4;
         private PictureBox pictureBox3;
+        private Label lbl_nome;
+        private TextBox txt_nome;
+        private Button btn_editar;
+        private Button btn_limparCampos;
+        private Button btn_listar;
+        private Button btn_deletar;
+        private Button btn_salvar;
     }
 }
