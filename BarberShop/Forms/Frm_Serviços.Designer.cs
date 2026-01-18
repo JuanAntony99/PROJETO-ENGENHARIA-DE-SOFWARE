@@ -275,7 +275,7 @@
             Controls.Add(pictureBox1);
             Controls.Add(dgv_tabelaServicos);
             Name = "Frm_Serviços";
-            Text = " ";
+            Text = " BarberShop";
             ((System.ComponentModel.ISupportInitialize)dgv_tabelaServicos).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();

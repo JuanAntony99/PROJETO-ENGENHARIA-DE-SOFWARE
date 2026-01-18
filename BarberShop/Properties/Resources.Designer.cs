@@ -59,5 +59,15 @@ namespace BarberShop.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap jovem_na_barbearia_aparando_cabelo {
+            get {
+                object obj = ResourceManager.GetObject("jovem-na-barbearia-aparando-cabelo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

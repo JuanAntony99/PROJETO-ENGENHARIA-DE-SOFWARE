@@ -55,8 +55,6 @@ namespace projeto
             cli.Data_Cadastro = dtp_dataCadastro.Value;
             dp.InserirClientes(cli);
             AtualizarDataTable();
-
-
         }
 
         private void Frm_CadastroClientes_Load(object sender, EventArgs e)
@@ -223,7 +221,6 @@ namespace projeto
         {
             Deletar();
         }
-
         private void btn_editar_Click_1(object sender, EventArgs e)
         {
             Editar();
