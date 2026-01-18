@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BarberShop.LoginFuncionario;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,11 +16,12 @@ namespace BarberShop.Forms
             InitializeComponent();
         }
 
+        
         private void btn_login_Click(object sender, EventArgs e)
         {
             try
             {
-                var controller = new LoginController();
+                LoginController controller = new LoginController();
                 var usuario = controller.Autenticar(
                     txt_user.Text,
                     txt_senha.Text
@@ -27,9 +29,8 @@ namespace BarberShop.Forms
 
                 MessageBox.Show($"Bem-vindo, {usuario.Nome}");
 
-                var telaPrincipal = new Frm_TelaPrincipal();
-                telaPrincipal.Show();
-                this.Hide();
+                this.DialogResult = DialogResult.OK;
+                this.Close();
             }
             catch (Exception ex)
             {
