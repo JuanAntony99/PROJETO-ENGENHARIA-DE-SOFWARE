@@ -48,6 +48,7 @@
             btn_listar = new Button();
             btn_deletar = new Button();
             btn_salvar = new Button();
+            btn_buscar = new Button();
             ((System.ComponentModel.ISupportInitialize)dgv_tabelaServicos).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -61,6 +62,7 @@
             dgv_tabelaServicos.Name = "dgv_tabelaServicos";
             dgv_tabelaServicos.Size = new Size(286, 381);
             dgv_tabelaServicos.TabIndex = 0;
+            dgv_tabelaServicos.CellClick += dgv_tabelaServicos_CellClick;
             // 
             // pictureBox1
             // 
@@ -92,6 +94,7 @@
             lbl_id.Size = new Size(25, 19);
             lbl_id.TabIndex = 6;
             lbl_id.Text = "ID";
+            lbl_id.Visible = false;
             // 
             // lbl_preco
             // 
@@ -130,6 +133,7 @@
             txt_id.Name = "txt_id";
             txt_id.Size = new Size(218, 23);
             txt_id.TabIndex = 12;
+            txt_id.Visible = false;
             // 
             // label5
             // 
@@ -198,6 +202,7 @@
             btn_editar.TabIndex = 20;
             btn_editar.Text = "Editar";
             btn_editar.UseVisualStyleBackColor = false;
+            btn_editar.Click += btn_editar_Click;
             // 
             // btn_limparCampos
             // 
@@ -223,6 +228,7 @@
             btn_listar.TabIndex = 18;
             btn_listar.Text = "Listar";
             btn_listar.UseVisualStyleBackColor = true;
+            btn_listar.Click += btn_listar_Click;
             // 
             // btn_deletar
             // 
@@ -235,6 +241,7 @@
             btn_deletar.TabIndex = 21;
             btn_deletar.Text = "Deletar";
             btn_deletar.UseVisualStyleBackColor = true;
+            btn_deletar.Click += btn_deletar_Click;
             // 
             // btn_salvar
             // 
@@ -249,6 +256,19 @@
             btn_salvar.UseVisualStyleBackColor = true;
             btn_salvar.Click += btn_salvar_Click;
             // 
+            // btn_buscar
+            // 
+            btn_buscar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btn_buscar.ImeMode = ImeMode.NoControl;
+            btn_buscar.Location = new Point(656, 143);
+            btn_buscar.Margin = new Padding(4, 3, 4, 3);
+            btn_buscar.Name = "btn_buscar";
+            btn_buscar.Size = new Size(93, 29);
+            btn_buscar.TabIndex = 22;
+            btn_buscar.Text = "Buscar";
+            btn_buscar.UseVisualStyleBackColor = true;
+            btn_buscar.Click += btn_buscar_Click;
+            // 
             // Frm_Serviços
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -256,6 +276,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 482);
+            Controls.Add(btn_buscar);
             Controls.Add(btn_editar);
             Controls.Add(btn_limparCampos);
             Controls.Add(btn_listar);
@@ -276,6 +297,7 @@
             Controls.Add(dgv_tabelaServicos);
             Name = "Frm_Serviços";
             Text = " BarberShop";
+            Load += Frm_Serviços_Load;
             ((System.ComponentModel.ISupportInitialize)dgv_tabelaServicos).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
@@ -305,5 +327,6 @@
         private Button btn_listar;
         private Button btn_deletar;
         private Button btn_salvar;
+        private Button btn_buscar;
     }
 }

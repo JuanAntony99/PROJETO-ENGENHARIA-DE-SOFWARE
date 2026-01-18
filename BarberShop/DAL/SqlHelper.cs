@@ -88,6 +88,56 @@ namespace BarberShop.DAL
             }
         }
 
+        public bool Desativar_Ativar(int id, bool escolha,string campo)
+        {
+            try
+            {
+                _conexao.Open();
+
+                string _sql;
+
+                if (escolha)
+                {
+                    _sql = $"UPDATE {table_name} SET {campo} = 1 WHERE id = @id";
+                }
+                else
+                {
+                    _sql = $"UPDATE {table_name} SET {campo} = 0 WHERE id = @id"; ;
+                }
+
+                using (var comando = new MySqlCommand(_sql, _conexao))
+                {
+                    comando.Parameters.AddWithValue($"@{campo}", campo);
+                    comando.Parameters.AddWithValue("@id", id);
+                    int linhas = comando.ExecuteNonQuery();
+
+                    if (linhas == 0)
+                        MessageBox.Show("Registro não encontrado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (escolha)
+                    {
+                        MessageBox.Show($"{name} ativado com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show($"{name} desativado com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    return true;
+                }
+            }
+            catch (System.Exception e)
+            {
+                MessageBox.Show(e.Message, $"Erro ao editar {name}", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            finally
+            {
+                if (_conexao.State == ConnectionState.Open)
+                {
+                    _conexao.Close();
+                }
+            }
+        }
+
         public void Editar(object obj)
         {
             try
@@ -158,7 +208,7 @@ namespace BarberShop.DAL
             try
             {
                 DataTable dt = new DataTable();
-                string _sql = $@"SELECT * FROM {table_name}";
+                string _sql = $@"SELECT * FROM {table_name} LIMIT 100";
 
                 using (var comando = new MySqlCommand(_sql, _conexao))
                 {

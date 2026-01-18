@@ -14,5 +14,6 @@ namespace BarberUp.Interface
         bool DeletarServico(int Id);
         DataTable VerificarServico();
         DataTable VerificarServico_porId(int Id);
+        public DataTable Selecionar_porCampo(string campo, string valorBusca);
     }
 }

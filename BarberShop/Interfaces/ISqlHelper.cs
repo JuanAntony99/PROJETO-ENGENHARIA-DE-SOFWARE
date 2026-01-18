@@ -14,5 +14,6 @@ namespace BarberShop.Interfaces
         DataTable Selecionar();
         DataTable Selecionar_porID(int Id);
         public DataTable Selecionar_porCampo(string campo, string valorBusca);
+        public bool Desativar_Ativar(int id, bool escolha, string campo);
     }
 }

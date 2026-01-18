@@ -12,8 +12,8 @@ namespace BarberShop.DAL
         SqlHelper sql = new SqlHelper(
             "Servico",
             "TB_SERVICOS",
-            "Nome=@Nome,Preco=@Preco,Duracao=@Duracao,Ativo=@Ativo",
-            "(Nome,Preco,Duracao,Ativo) VALUES (@Nome,@Preco,@Duracao,@Ativo)"
+            "Nome=@Nome,Preco=@Preco,duracao_minutos=@duracao_minutos",
+            "(Nome,Preco,duracao_minutos) VALUES (@Nome,@Preco,@duracao_minutos)"
         );
         public void AtualizarServico(Servicos s)
         {
@@ -28,6 +28,11 @@ namespace BarberShop.DAL
         public void InserirServico(Servicos s)
         {
             sql.Inserir(s);
+        }
+
+        public DataTable Selecionar_porCampo(string campo, string valorBusca)
+        {
+            return sql.Selecionar_porCampo(campo, valorBusca);
         }
 
         public DataTable VerificarServico()
