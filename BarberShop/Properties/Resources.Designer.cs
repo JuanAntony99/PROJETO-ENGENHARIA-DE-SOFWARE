@@ -63,6 +63,16 @@ namespace BarberShop.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _7407996_user_icon_person_icon_client_symbol_login_head_sign_icon_design_vetor {
+            get {
+                object obj = ResourceManager.GetObject("7407996-user-icon-person-icon-client-symbol-login-head-sign-icon-design-vetor", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap jovem_na_barbearia_aparando_cabelo {
             get {
                 object obj = ResourceManager.GetObject("jovem-na-barbearia-aparando-cabelo", resourceCulture);
