@@ -20,52 +20,71 @@ DROP DATABASE IF EXISTS `db_barber`;
 CREATE DATABASE IF NOT EXISTS `db_barber` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `db_barber`;
 
--- Copiando estrutura para tabela db_barber.tb_agendamento
-DROP TABLE IF EXISTS `tb_agendamento`;
-CREATE TABLE IF NOT EXISTS `tb_agendamento` (
+-- Copiando estrutura para tabela db_barber.tb_agendamentos
+DROP TABLE IF EXISTS `tb_agendamentos`;
+CREATE TABLE IF NOT EXISTS `tb_agendamentos` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `clienteId` int NOT NULL,
-  `servicoId` int NOT NULL,
-  `data` date NOT NULL DEFAULT (curdate()),
-  `horaInicio` time NOT NULL DEFAULT (curtime()),
-  `horaFim` time NOT NULL DEFAULT (curtime()),
-  PRIMARY KEY (`id`),
-  KEY `FK_tb_agendamento_tb_clientes` (`clienteId`),
-  KEY `FK_tb_agendamento_tb_servicos` (`servicoId`),
-  CONSTRAINT `FK_tb_agendamento_tb_clientes` FOREIGN KEY (`clienteId`) REFERENCES `tb_clientes` (`id`),
-  CONSTRAINT `FK_tb_agendamento_tb_servicos` FOREIGN KEY (`servicoId`) REFERENCES `tb_servicos` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `cliente_id` int NOT NULL,
+  `funcionario_id` int NOT NULL,
+  `servico_id` int NOT NULL,
+  `datahora_agendamento` datetime NOT NULL,
+  `concluido` tinyint NOT NULL DEFAULT (0),
+  PRIMARY KEY (`id`) USING BTREE,
+  UNIQUE KEY `uk_funcionario_horario` (`funcionario_id`,`datahora_agendamento`) USING BTREE,
+  KEY `fk_ag_cliente` (`cliente_id`),
+  KEY `fk_ag_servico` (`servico_id`),
+  KEY `idx_agendamento_data` (`datahora_agendamento`) USING BTREE,
+  CONSTRAINT `fk_ag_cliente` FOREIGN KEY (`cliente_id`) REFERENCES `tb_clientes` (`id`) ON DELETE RESTRICT ON UPDATE CASCADE,
+  CONSTRAINT `fk_ag_funcionario` FOREIGN KEY (`funcionario_id`) REFERENCES `tb_funcionarios` (`id`) ON DELETE RESTRICT ON UPDATE CASCADE,
+  CONSTRAINT `fk_ag_servico` FOREIGN KEY (`servico_id`) REFERENCES `tb_servicos` (`id`) ON DELETE RESTRICT ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=1000001 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Copiando dados para a tabela db_barber.tb_agendamento: ~0 rows (aproximadamente)
-DELETE FROM `tb_agendamento`;
+-- Exportação de dados foi desmarcado.
 
 -- Copiando estrutura para tabela db_barber.tb_clientes
 DROP TABLE IF EXISTS `tb_clientes`;
 CREATE TABLE IF NOT EXISTS `tb_clientes` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `nome` varchar(150) NOT NULL DEFAULT '0',
-  `telefone` varchar(20) NOT NULL DEFAULT '0',
-  `email` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `telefone` (`telefone`),
-  KEY `nome` (`nome`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `nome` varchar(100) NOT NULL,
+  `telefone` varchar(30) NOT NULL,
+  `email` varchar(60) NOT NULL,
+  `ativo` tinyint(1) NOT NULL DEFAULT '1',
+  `data_cadastro` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`) USING BTREE,
+  UNIQUE KEY `uk_cliente_telefone` (`telefone`),
+  UNIQUE KEY `uk_cliente_email` (`email`),
+  KEY `idx_cliente_nome` (`nome`)
+) ENGINE=InnoDB AUTO_INCREMENT=1010013 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Copiando dados para a tabela db_barber.tb_clientes: ~0 rows (aproximadamente)
-DELETE FROM `tb_clientes`;
+-- Exportação de dados foi desmarcado.
+
+-- Copiando estrutura para tabela db_barber.tb_funcionarios
+DROP TABLE IF EXISTS `tb_funcionarios`;
+CREATE TABLE IF NOT EXISTS `tb_funcionarios` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `nome` varchar(150) NOT NULL,
+  `telefone` varchar(30) NOT NULL,
+  `comissao` decimal(5,2) NOT NULL,
+  `ativo` tinyint(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`) USING BTREE,
+  UNIQUE KEY `uk_funcionario_telefone` (`telefone`)
+) ENGINE=InnoDB AUTO_INCREMENT=1000001 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- Exportação de dados foi desmarcado.
 
 -- Copiando estrutura para tabela db_barber.tb_servicos
 DROP TABLE IF EXISTS `tb_servicos`;
 CREATE TABLE IF NOT EXISTS `tb_servicos` (
   `id` int NOT NULL AUTO_INCREMENT,
   `nome` varchar(50) NOT NULL,
-  `descricao` varchar(100) NOT NULL,
-  `preco` double NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `descricao` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `preco` decimal(10,2) NOT NULL,
+  `duracao_minutos` int NOT NULL,
+  `ativo` tinyint(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=1000001 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Copiando dados para a tabela db_barber.tb_servicos: ~0 rows (aproximadamente)
-DELETE FROM `tb_servicos`;
+-- Exportação de dados foi desmarcado.
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
