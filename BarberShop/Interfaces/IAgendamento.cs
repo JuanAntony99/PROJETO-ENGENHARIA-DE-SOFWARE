@@ -14,5 +14,6 @@ namespace BarberUp.Interface
         bool DeletarAgendamento(int Id);
         DataTable VerificarAgendamento();
         DataTable VerificarAgendamento_porId(int Id);
+        public DataTable Selecionar_porCampo(string campo, string valorBusca);
     }
 }

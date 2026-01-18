@@ -1,3 +1,4 @@
+using BarberShop.Forms;
 using projeto;
 
 namespace BarberShop
@@ -13,7 +14,7 @@ namespace BarberShop
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Frm_CadastroClientes());
+            Application.Run(new Frm_Serviços());
         }
     }
 }

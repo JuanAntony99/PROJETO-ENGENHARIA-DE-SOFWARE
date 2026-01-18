@@ -32,6 +32,11 @@ namespace BarberShop.DAL
             sql.Inserir(f);
         }
 
+        public DataTable Selecionar_porCampo(string campo, string valorBusca)
+        {
+            return sql.Selecionar_porCampo(campo, valorBusca);
+        }
+
         public DataTable VerificarFuncionario()
         {
             return sql.Selecionar();

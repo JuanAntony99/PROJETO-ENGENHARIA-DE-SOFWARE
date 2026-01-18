@@ -77,12 +77,12 @@ DROP TABLE IF EXISTS `tb_servicos`;
 CREATE TABLE IF NOT EXISTS `tb_servicos` (
   `id` int NOT NULL AUTO_INCREMENT,
   `nome` varchar(50) NOT NULL,
-  `descricao` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `descricao` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT 'sem descrição',
   `preco` decimal(10,2) NOT NULL,
   `duracao_minutos` int NOT NULL,
   `ativo` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=1000001 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1000002 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- Exportação de dados foi desmarcado.
 
