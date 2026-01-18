@@ -13,6 +13,6 @@ namespace BarberShop.Interfaces
         void InserirClientes(Clientes c);
         DataTable VerificarClientes();
         DataTable VerificarClientes_porID(int Id);
-        public DataTable Selecionar_porCampo(string campo, string valorBusca);
+        public DataTable Selecionar_porCampo(string campo, string valorBusca, string dadosTable);
     }
 }

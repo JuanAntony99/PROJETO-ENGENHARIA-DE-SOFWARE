@@ -31,9 +31,22 @@ namespace BarberShop.DAL
             sql.Inserir(a);
         }
 
-        public DataTable Selecionar_porCampo(string campo, string valorBusca)
+        public DataTable Selecionar_Join(DateTime? inicio = null, DateTime? fim = null)
         {
-            return sql.Selecionar_porCampo(campo, valorBusca);
+            string[] tabelasRelacionadas = { "tb_clientes", "tb_funcionarios", "tb_servicos" };
+            string[] chavesEstrangeiras = { "cliente_id", "funcionario_id", "servico_id" };
+
+            return sql.Selecionar_Join(tabelasRelacionadas, chavesEstrangeiras, inicio, fim);
+        }
+
+        public DataTable Selecionar_porCampo(string campo, string valorBusca, string dadosTable = "*")
+        {
+            return sql.Selecionar_porCampo(campo, valorBusca, dadosTable);
+        }
+
+        public DataTable Selecionar_porDataTime(string campo, DateTime dataInicio, DateTime dataFim)
+        {
+            return sql.Selecionar_porDataTime(campo, dataInicio, dataFim);
         }
 
         public DataTable VerificarAgendamento()

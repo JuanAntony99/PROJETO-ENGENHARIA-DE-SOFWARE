@@ -2,6 +2,7 @@
 using BarberShop.Interfaces;
 using MySql.Data.MySqlClient;
 using System.Data;
+using System.Text;
 
 namespace BarberShop.DAL
 {
@@ -265,10 +266,10 @@ namespace BarberShop.DAL
             }
         }
 
-        public DataTable Selecionar_porCampo(string campo, string valorBusca)
+        public DataTable Selecionar_porCampo(string campo, string valorBusca, string dadosTable)
         {
             DataTable dt = new DataTable();
-            string sql = $"SELECT * FROM {table_name} WHERE {campo} LIKE @valor ORDER BY {campo} LIMIT 100";
+            string sql = $"SELECT {dadosTable} FROM {table_name} WHERE {campo} LIKE @valor ORDER BY {campo} LIMIT 50";
 
             using (MySqlCommand comandoSql = new MySqlCommand(sql, _conexao))
             {
@@ -295,6 +296,99 @@ namespace BarberShop.DAL
                         _conexao.Close();
                     }
                 }
+            }
+        }
+
+        public DataTable Selecionar_porDataTime(string campo, DateTime dataInicio, DateTime dataFim)
+        {
+            DataTable dt = new DataTable();
+            string sql = $"SELECT * FROM {table_name} WHERE {campo} >= @dataInicio AND {campo} <= @dataFim ORDER BY {campo} LIMIT 100";
+
+            using (MySqlCommand comandoSql = new MySqlCommand(sql, _conexao))
+            {
+
+                comandoSql.Parameters.AddWithValue("@dataInicio", dataInicio);
+                comandoSql.Parameters.AddWithValue("@dataFim", dataFim);
+                MySqlDataAdapter sql_relacao = new MySqlDataAdapter(comandoSql);
+
+                try
+                {
+                    _conexao.Open();
+                    sql_relacao.Fill(dt);
+                    return dt;
+                }
+                catch (Exception erro)
+                {
+                    MessageBox.Show(erro.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return null;
+                }
+                finally
+                {
+
+                    if (_conexao != null && _conexao.State == ConnectionState.Open)
+                    {
+                        _conexao.Close();
+                    }
+                }
+            }
+        }
+
+        public DataTable Selecionar_Join(string[] tabelasJoin, string[] colunasLigacao, DateTime? inicio = null, DateTime? fim = null)
+        {
+            DataTable dt = new DataTable();
+            StringBuilder sql = new StringBuilder();
+
+            // Inicia o SELECT usando o alias 'a' para a table_name da classe
+            sql.Append($"SELECT a.id AS 'ID', ");
+
+            // Adiciona as colunas de NOME das tabelas relacionadas
+            for (int i = 0; i < tabelasJoin.Length; i++)
+            {
+                // Pega a primeira letra após "tb_" para criar o alias (ex: 'c' para tb_clientes)
+                string aliasRelacional = tabelasJoin[i].Substring(3, 1);
+                sql.Append($"{aliasRelacional}.nome AS '{tabelasJoin[i].Replace("tb_", "")}', ");
+            }
+
+            sql.Append("a.datahora_agendamento AS 'Data/Hora' ");
+
+            // USA A VARIÁVEL DA CLASSE table_name
+            sql.Append($"FROM {table_name} a ");
+
+            // Monta os INNER JOINs
+            for (int i = 0; i < tabelasJoin.Length; i++)
+            {
+                string aliasRelacional = tabelasJoin[i].Substring(3, 1);
+                sql.Append($"INNER JOIN {tabelasJoin[i]} {aliasRelacional} ON a.{colunasLigacao[i]} = {aliasRelacional}.id ");
+            }
+
+            // Filtro de data opcional
+            if (inicio.HasValue && fim.HasValue)
+            {
+                sql.Append(" WHERE a.datahora_agendamento BETWEEN @inicio AND @fim ");
+            }
+
+            sql.Append(" ORDER BY a.datahora_agendamento ASC LIMIT 100");
+
+            using (MySqlCommand cmd = new MySqlCommand(sql.ToString(), _conexao))
+            {
+                if (inicio.HasValue && fim.HasValue)
+                {
+                    cmd.Parameters.AddWithValue("@inicio", inicio.Value);
+                    cmd.Parameters.AddWithValue("@fim", fim.Value);
+                }
+
+                try
+                {
+                    _conexao.Open();
+                    new MySqlDataAdapter(cmd).Fill(dt);
+                    return dt;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro na busca: " + ex.Message);
+                    return null;
+                }
+                finally { _conexao.Close(); }
             }
         }
     }
