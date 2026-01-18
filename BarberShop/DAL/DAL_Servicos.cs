@@ -12,8 +12,8 @@ namespace BarberShop.DAL
         SqlHelper sql = new SqlHelper(
             "Servico",
             "TB_SERVICOS",
-            "Nome=@Nome,Descricao=@Descricao,Preco=@Preco,Duracao=@Duracao,Ativo=@Ativo",
-            "(Nome,Descricao,Preco,Duracao,Ativo) VALUES (@Nome,@Descricao,@Preco,@Duracao,@Ativo)"
+            "Nome=@Nome,Preco=@Preco,Duracao=@Duracao,Ativo=@Ativo",
+            "(Nome,Preco,Duracao,Ativo) VALUES (@Nome,@Preco,@Duracao,@Ativo)"
         );
         public void AtualizarServico(Servicos s)
         {
