@@ -88,8 +88,6 @@ namespace projeto
             }
             finally
             {
-                Application.DoEvents();
-
                 btn_listar.Enabled = true;
                 processando = false;
             }

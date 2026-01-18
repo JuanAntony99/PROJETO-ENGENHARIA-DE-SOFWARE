@@ -158,7 +158,7 @@ namespace BarberShop.DAL
             try
             {
                 DataTable dt = new DataTable();
-                string _sql = $@"SELECT * FROM {table_name}";
+                string _sql = $@"SELECT * FROM {table_name} LIMIT 100";
 
                 using (var comando = new MySqlCommand(_sql, _conexao))
                 {
