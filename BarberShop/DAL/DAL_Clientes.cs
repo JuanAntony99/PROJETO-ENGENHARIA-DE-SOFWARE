@@ -17,12 +17,12 @@ namespace BarberShop.DAL
         SqlHelper sql = new SqlHelper(
             "Cliente",
             "TB_CLIENTES",
-            "nome=@nome,email=@email,telefone=@telefone,ativo=@ativo,data_cadastro=@data_cadastro",
-            "(nome,email,telefone,ativo,data_cadastro) VALUES (@nome,@email,@telefone,@ativo,@data_cadastro)"
+            "nome=@nome,email=@email,telefone=@telefone,data_cadastro=@data_cadastro",
+            "(nome,email,telefone,data_cadastro) VALUES (@nome,@email,@telefone,@data_cadastro)"
         );
         public void AtualizarClientes(Clientes c)
         {
-            sql.Inserir(c);
+            sql.Editar(c);
         }
 
         public void DeletarClientes(int Id)
@@ -33,6 +33,11 @@ namespace BarberShop.DAL
         public void InserirClientes(Clientes c)
         {
             sql.Inserir(c);
+        }
+
+        public DataTable Selecionar_porCampo(string campo, string valorBusca)
+        {
+            return sql.Selecionar_porCampo(campo, valorBusca);
         }
 
         public DataTable VerificarClientes()

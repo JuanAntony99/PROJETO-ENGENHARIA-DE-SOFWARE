@@ -19,33 +19,20 @@ namespace BarberShop.DAL
         // variavel para sql da funcao insert
         string sql_insert = "";
 
-        // lista de dados que serao ignorados na insercao e edicao
-        List<string> excecoesInserir = new List<string>();
-        List<string> excecoesEditar = new List<string>();
-
         private MySqlConnection _conexao;
-        public SqlHelper(string Name, string Table_Name, string Sql_Update, string Sql_Insert, List<string> excecoesinserir = null, List<string> excecoeseditar = null)
+        public SqlHelper(string Name, string Table_Name, string Sql_Update, string Sql_Insert)
         {
             this._conexao = new Connection_Factory().getConection();
             name = Name;
             table_name = Table_Name;
             sql_update = Sql_Update;
             sql_insert = Sql_Insert;
-            excecoesInserir = excecoesinserir ?? new List<string>();
-            excecoesEditar = excecoeseditar ?? new List<string>();
         }
-        private void AddParametersFromObject(
-        MySqlCommand command,
-        object data,
-        List<string> exp)
+        private void AddParametersFromObject(MySqlCommand command, object data)
         {
             foreach (var prop in data.GetType().GetProperties())
             {
                 string paramName = "@" + prop.Name;
-
-                // Se a lista de exceções existir e contiver o parâmetro, pula
-                if (exp != null && exp.Contains(paramName))
-                    continue;
 
                 object value = prop.GetValue(data) ?? DBNull.Value;
                 command.Parameters.AddWithValue(paramName, value);
@@ -111,7 +98,7 @@ namespace BarberShop.DAL
 
                 using (var comando = new MySqlCommand(_sql, _conexao))
                 {
-                    AddParametersFromObject(comando, obj, excecoesEditar);
+                    AddParametersFromObject(comando, obj);
                     int linhas = comando.ExecuteNonQuery();
 
                     if (linhas == 0)
@@ -145,7 +132,7 @@ namespace BarberShop.DAL
 
                 using (var comando = new MySqlCommand(_sql, _conexao))
                 {
-                    AddParametersFromObject(comando, obj, excecoesInserir);
+                    AddParametersFromObject(comando, obj);
                     int linhas = comando.ExecuteNonQuery();
                     if (linhas == 0)
                         MessageBox.Show("Nenhum registro inserido.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -198,7 +185,6 @@ namespace BarberShop.DAL
         public DataTable Selecionar_porID(int id)
         {
             DataTable dt = new DataTable();
-
             string sql = $"SELECT * FROM {table_name} WHERE id = @id";
 
             using (MySqlCommand comandoSql = new MySqlCommand(sql, _conexao))
@@ -209,11 +195,41 @@ namespace BarberShop.DAL
 
                 try
                 {
-
                     _conexao.Open();
-
                     sql_relacao.Fill(dt);
+                    return dt;
+                }
+                catch (Exception erro)
+                {
+                    MessageBox.Show(erro.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return null;
+                }
+                finally
+                {
 
+                    if (_conexao != null && _conexao.State == ConnectionState.Open)
+                    {
+                        _conexao.Close();
+                    }
+                }
+            }
+        }
+
+        public DataTable Selecionar_porCampo(string campo, string valorBusca)
+        {
+            DataTable dt = new DataTable();
+            string sql = $"SELECT * FROM {table_name} WHERE {campo} LIKE @valor ORDER BY {campo} LIMIT 100";
+
+            using (MySqlCommand comandoSql = new MySqlCommand(sql, _conexao))
+            {
+
+                comandoSql.Parameters.AddWithValue("@valor", valorBusca + "%");
+                MySqlDataAdapter sql_relacao = new MySqlDataAdapter(comandoSql);
+
+                try
+                {
+                    _conexao.Open();
+                    sql_relacao.Fill(dt);
                     return dt;
                 }
                 catch (Exception erro)

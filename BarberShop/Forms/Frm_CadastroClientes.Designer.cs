@@ -49,6 +49,7 @@
             btn_limparCampos = new Button();
             lbl_dataCadastro = new Label();
             dtp_dataCadastro = new DateTimePicker();
+            btn_buscar = new Button();
             ((System.ComponentModel.ISupportInitialize)dtg_banco).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -110,12 +111,14 @@
             resources.ApplyResources(btn_deletar, "btn_deletar");
             btn_deletar.Name = "btn_deletar";
             btn_deletar.UseVisualStyleBackColor = true;
+            btn_deletar.Click += btn_deletar_Click_1;
             // 
             // dtg_banco
             // 
             resources.ApplyResources(dtg_banco, "dtg_banco");
             dtg_banco.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtg_banco.Name = "dtg_banco";
+            dtg_banco.CellClick += dtg_banco_CellClick_1;
             // 
             // pictureBox1
             // 
@@ -156,12 +159,14 @@
             resources.ApplyResources(btn_listar, "btn_listar");
             btn_listar.Name = "btn_listar";
             btn_listar.UseVisualStyleBackColor = true;
+            btn_listar.Click += btn_listar_Click;
             // 
             // btn_editar
             // 
             resources.ApplyResources(btn_editar, "btn_editar");
             btn_editar.Name = "btn_editar";
             btn_editar.UseVisualStyleBackColor = false;
+            btn_editar.Click += btn_editar_Click_1;
             // 
             // btn_limparCampos
             // 
@@ -182,11 +187,19 @@
             resources.ApplyResources(dtp_dataCadastro, "dtp_dataCadastro");
             dtp_dataCadastro.Name = "dtp_dataCadastro";
             // 
+            // btn_buscar
+            // 
+            resources.ApplyResources(btn_buscar, "btn_buscar");
+            btn_buscar.Name = "btn_buscar";
+            btn_buscar.UseVisualStyleBackColor = true;
+            btn_buscar.Click += bnt_buscar_Click;
+            // 
             // Frm_CadastroClientes
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
+            Controls.Add(btn_buscar);
             Controls.Add(dtp_dataCadastro);
             Controls.Add(pictureBox2);
             Controls.Add(cbx_inativo);
@@ -208,6 +221,7 @@
             Controls.Add(txt_id);
             Controls.Add(txt_nome);
             Name = "Frm_CadastroClientes";
+            Load += Frm_CadastroClientes_Load;
             ((System.ComponentModel.ISupportInitialize)dtg_banco).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
@@ -238,6 +252,7 @@
         private Button btn_limparCampos;
         private Label lbl_dataCadastro;
         private DateTimePicker dtp_dataCadastro;
+        private Button btn_buscar;
     }
 }
 
