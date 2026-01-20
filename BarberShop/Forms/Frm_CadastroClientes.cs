@@ -1,4 +1,5 @@
-﻿using BarberShop.DAL;
+﻿using BarberShop;
+using BarberShop.DAL;
 using BarberShop.Interfaces;
 using BarberShop.Models;
 using System;
@@ -268,6 +269,13 @@ namespace projeto
         private void bnt_buscar_Click(object sender, EventArgs e)
         {
             Buscar();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Frm_TelaPrincipal form = new Frm_TelaPrincipal();
+            form.ShowDialog();
+            this.Close();
         }
     }
 }

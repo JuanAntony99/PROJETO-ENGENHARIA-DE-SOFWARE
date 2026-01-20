@@ -50,6 +50,7 @@
             lbl_dataCadastro = new Label();
             dtp_dataCadastro = new DateTimePicker();
             btn_buscar = new Button();
+            btn_voltarmenu = new Button();
             ((System.ComponentModel.ISupportInitialize)dtg_banco).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -194,11 +195,19 @@
             btn_buscar.UseVisualStyleBackColor = true;
             btn_buscar.Click += bnt_buscar_Click;
             // 
+            // btn_voltarmenu
+            // 
+            resources.ApplyResources(btn_voltarmenu, "btn_voltarmenu");
+            btn_voltarmenu.Name = "btn_voltarmenu";
+            btn_voltarmenu.UseVisualStyleBackColor = true;
+            btn_voltarmenu.Click += button1_Click;
+            // 
             // Frm_CadastroClientes
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
+            Controls.Add(btn_voltarmenu);
             Controls.Add(btn_buscar);
             Controls.Add(dtp_dataCadastro);
             Controls.Add(pictureBox2);
@@ -253,6 +262,7 @@
         private Label lbl_dataCadastro;
         private DateTimePicker dtp_dataCadastro;
         private Button btn_buscar;
+        private Button btn_voltarmenu;
     }
 }
 

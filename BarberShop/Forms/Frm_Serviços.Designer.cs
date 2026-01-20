@@ -49,6 +49,7 @@
             btn_deletar = new Button();
             btn_salvar = new Button();
             btn_buscar = new Button();
+            btn_voltarmenu = new Button();
             ((System.ComponentModel.ISupportInitialize)dgv_tabelaServicos).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -269,6 +270,16 @@
             btn_buscar.UseVisualStyleBackColor = true;
             btn_buscar.Click += btn_buscar_Click;
             // 
+            // btn_voltarmenu
+            // 
+            btn_voltarmenu.Location = new Point(12, 447);
+            btn_voltarmenu.Name = "btn_voltarmenu";
+            btn_voltarmenu.Size = new Size(75, 23);
+            btn_voltarmenu.TabIndex = 23;
+            btn_voltarmenu.Text = "Menu";
+            btn_voltarmenu.UseVisualStyleBackColor = true;
+            btn_voltarmenu.Click += btn_menu_Click;
+            // 
             // Frm_Serviços
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -276,6 +287,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 482);
+            Controls.Add(btn_voltarmenu);
             Controls.Add(btn_buscar);
             Controls.Add(btn_editar);
             Controls.Add(btn_limparCampos);
@@ -328,5 +340,6 @@
         private Button btn_deletar;
         private Button btn_salvar;
         private Button btn_buscar;
+        private Button btn_voltarmenu;
     }
 }

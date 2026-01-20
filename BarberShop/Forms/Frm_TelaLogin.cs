@@ -16,7 +16,7 @@ namespace BarberShop.Forms
             InitializeComponent();
         }
 
-        
+
         private void btn_login_Click(object sender, EventArgs e)
         {
             try
@@ -36,6 +36,11 @@ namespace BarberShop.Forms
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

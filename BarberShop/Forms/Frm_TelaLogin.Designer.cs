@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_TelaLogin));
             pictureBox1 = new PictureBox();
             label1 = new Label();
             txt_user = new TextBox();
             label2 = new Label();
             txt_senha = new TextBox();
             btn_login = new Button();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -41,7 +43,7 @@
             // 
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.Image = Properties.Resources._7407996_user_icon_person_icon_client_symbol_login_head_sign_icon_design_vetor;
-            pictureBox1.Location = new Point(267, 59);
+            pictureBox1.Location = new Point(267, 69);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(136, 134);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -51,9 +53,10 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.BackColor = Color.White;
+            label1.BackColor = Color.Transparent;
             label1.Font = new Font("Times New Roman", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(285, 225);
+            label1.ForeColor = Color.FromArgb(255, 128, 0);
+            label1.Location = new Point(285, 226);
             label1.Name = "label1";
             label1.Size = new Size(100, 23);
             label1.TabIndex = 1;
@@ -61,7 +64,7 @@
             // 
             // txt_user
             // 
-            txt_user.Location = new Point(215, 255);
+            txt_user.Location = new Point(215, 252);
             txt_user.Name = "txt_user";
             txt_user.Size = new Size(240, 23);
             txt_user.TabIndex = 1;
@@ -69,9 +72,10 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.BackColor = Color.White;
+            label2.BackColor = Color.Transparent;
             label2.Font = new Font("Times New Roman", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(296, 301);
+            label2.ForeColor = Color.FromArgb(255, 128, 0);
+            label2.Location = new Point(296, 288);
             label2.Name = "label2";
             label2.Size = new Size(78, 23);
             label2.TabIndex = 1;
@@ -86,21 +90,40 @@
             // 
             // btn_login
             // 
+            btn_login.BackColor = Color.Transparent;
+            btn_login.FlatAppearance.BorderSize = 0;
+            btn_login.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btn_login.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btn_login.FlatStyle = FlatStyle.Flat;
             btn_login.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btn_login.ForeColor = Color.FromArgb(255, 128, 0);
             btn_login.Location = new Point(256, 402);
             btn_login.Name = "btn_login";
             btn_login.Size = new Size(159, 44);
             btn_login.TabIndex = 3;
             btn_login.Text = "LOGIN";
-            btn_login.UseVisualStyleBackColor = true;
+            btn_login.UseVisualStyleBackColor = false;
             btn_login.Click += btn_login_Click;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(584, 469);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 29);
+            button1.TabIndex = 7;
+            button1.Text = "Sair";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // Frm_TelaLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Zoom;
             ClientSize = new Size(671, 572);
+            Controls.Add(button1);
             Controls.Add(btn_login);
             Controls.Add(txt_senha);
             Controls.Add(label2);
@@ -122,5 +145,6 @@
         private Label label2;
         private TextBox txt_senha;
         private Button btn_login;
+        private Button button1;
     }
 }
