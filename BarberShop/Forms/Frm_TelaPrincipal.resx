@@ -345,7 +345,7 @@
   <data name="btn_Servicos.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAo
-        nwAAKJ8BOoBERAAAS/5JREFUeF7t3fnbdeX8x/9nUgpNSpOUBhGVSkhJZiJjytRAIikViUwfkgiZCUUS
+        ngAAKJ4B6MemoAAAS/5JREFUeF7t3fnbdeX8x/9nUgpNSpOUBhGVSkhJZiJjytRAIikViUwfkgiZCUUS
         ypChoshUojKkIqGRJB3fX75/wvd7vO/OfXf3uvZ1Xetc8/B6HMfrl/u+9rnWXuvc+33uvdc6TzAzM+uX
         s4FzgV30P8zMzGycjvrzu/j/ZgF+BjxD/8jMzMzG48mrFn8ZCJynf2xmZmbDtzFwpxb+VQYAz9EHmJmZ
         2bCtDvxai/4qxf+7+gAzMzMbvo9r0ZcBwMP0AWZmZjZsL9eCL8X/eH2AmZmZDdujteBL8f8rcH99kJmZ
@@ -675,7 +675,7 @@
   <data name="btn_Clientes.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAAMGVJREFUeF7tnYvbbtW8v+/O57OSyilF2QkbhQsbG9sx2eS0nXIo59ihkBTaJUS2
+        vQAADr0BR/uQrQAAMGVJREFUeF7tnYvbbtW8v+/O57OSyilF2QkbhQsbG9sx2eS0nXIo59ihkBTaJUS2
         kFMiO2rnEOWQ1LYrSungkBwjpf9i/66hWb/Vp7XWs973feaYY87nvq/rvq6u3rXe9R1jfOd3jmc+Y44B
         IiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi
         IiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi

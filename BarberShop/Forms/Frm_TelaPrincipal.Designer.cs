@@ -146,6 +146,7 @@
             Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Margin = new Padding(4);
             Name = "Frm_TelaPrincipal";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "BarberShop";
             WindowState = FormWindowState.Maximized;
             Load += Frm_TelaPrincipal_Load;

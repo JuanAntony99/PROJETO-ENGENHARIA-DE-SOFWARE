@@ -131,6 +131,7 @@
             Controls.Add(label1);
             Controls.Add(pictureBox1);
             Name = "Frm_TelaLogin";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "BarberShop";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
