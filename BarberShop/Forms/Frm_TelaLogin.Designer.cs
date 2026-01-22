@@ -87,6 +87,7 @@
             txt_senha.Name = "txt_senha";
             txt_senha.Size = new Size(240, 23);
             txt_senha.TabIndex = 2;
+            txt_senha.UseSystemPasswordChar = true;
             // 
             // btn_login
             // 
@@ -130,6 +131,9 @@
             Controls.Add(txt_user);
             Controls.Add(label1);
             Controls.Add(pictureBox1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             Name = "Frm_TelaLogin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "BarberShop";

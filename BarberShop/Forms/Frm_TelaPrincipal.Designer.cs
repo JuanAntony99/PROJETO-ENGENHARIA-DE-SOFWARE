@@ -144,6 +144,7 @@
             Controls.Add(btn_Servicos);
             Controls.Add(btn_Agendamentos);
             Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(4);
             Name = "Frm_TelaPrincipal";
             StartPosition = FormStartPosition.CenterScreen;

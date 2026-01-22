@@ -307,6 +307,7 @@
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
             Controls.Add(dgv_tabelaServicos);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Frm_Serviços";
             Text = " BarberShop";
             Load += Frm_Serviços_Load;
