@@ -119,14 +119,14 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="txt_nome.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 160</value>
+    <value>1, 84</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="txt_nome.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 3, 4, 3</value>
   </data>
   <data name="txt_nome.Size" type="System.Drawing.Size, System.Drawing">
-    <value>295, 23</value>
+    <value>306, 23</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="txt_nome.TabIndex" type="System.Int32, mscorlib">
@@ -139,19 +139,19 @@
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;txt_nome.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>pnl_cadastroclientes</value>
   </data>
   <data name="&gt;&gt;txt_nome.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>1</value>
   </data>
   <data name="txt_email.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 219</value>
+    <value>3, 143</value>
   </data>
   <data name="txt_email.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 3, 4, 3</value>
   </data>
   <data name="txt_email.Size" type="System.Drawing.Size, System.Drawing">
-    <value>295, 23</value>
+    <value>317, 23</value>
   </data>
   <data name="txt_email.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -163,19 +163,19 @@
     <value>System.Windows.Forms.MaskedTextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;txt_email.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>pnl_cadastroclientes</value>
   </data>
   <data name="&gt;&gt;txt_email.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>3</value>
   </data>
   <data name="txt_telefone.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 282</value>
+    <value>3, 206</value>
   </data>
   <data name="txt_telefone.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 3, 4, 3</value>
   </data>
   <data name="txt_telefone.Size" type="System.Drawing.Size, System.Drawing">
-    <value>295, 23</value>
+    <value>150, 23</value>
   </data>
   <data name="txt_telefone.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -187,25 +187,25 @@
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;txt_telefone.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>pnl_cadastroclientes</value>
   </data>
   <data name="&gt;&gt;txt_telefone.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>6</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 11.25pt</value>
+    <value>Times New Roman, 12pt</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 140</value>
+    <value>-1, 64</value>
   </data>
   <data name="label1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 0, 4, 0</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>44, 17</value>
+    <value>47, 19</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -221,10 +221,10 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>pnl_cadastroclientes</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>8</value>
   </data>
   <data name="cbx_ativo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -233,7 +233,7 @@
     <value>Times New Roman, 11.25pt</value>
   </data>
   <data name="cbx_ativo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 391</value>
+    <value>34, 315</value>
   </data>
   <data name="cbx_ativo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 3, 4, 3</value>
@@ -257,29 +257,29 @@
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbx_ativo.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>pnl_cadastroclientes</value>
   </data>
   <data name="&gt;&gt;cbx_ativo.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>12</value>
   </data>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 11.25pt</value>
+    <value>Times New Roman, 12pt</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 260</value>
+    <value>-1, 184</value>
   </data>
   <data name="label3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 0, 4, 0</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 17</value>
+    <value>60, 19</value>
   </data>
   <data name="label3.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -294,28 +294,28 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label3.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>pnl_cadastroclientes</value>
   </data>
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>13</value>
   </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 11.25pt</value>
+    <value>Times New Roman, 12pt</value>
   </data>
   <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 199</value>
+    <value>0, 123</value>
   </data>
   <data name="label2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 0, 4, 0</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>41, 17</value>
+    <value>42, 19</value>
   </data>
   <data name="label2.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -330,22 +330,22 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label2.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>pnl_cadastroclientes</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="btn_salvar.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
   <data name="btn_salvar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>576, 338</value>
+    <value>63, 369</value>
   </data>
   <data name="btn_salvar.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 3, 4, 3</value>
   </data>
   <data name="btn_salvar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>93, 29</value>
+    <value>79, 29</value>
   </data>
   <data name="btn_salvar.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -360,10 +360,10 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btn_salvar.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>pnl_cadastroclientes</value>
   </data>
   <data name="&gt;&gt;btn_salvar.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>9</value>
   </data>
   <data name="btn_deletar.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -372,13 +372,13 @@
     <value>NoControl</value>
   </data>
   <data name="btn_deletar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>701, 339</value>
+    <value>181, 369</value>
   </data>
   <data name="btn_deletar.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 3, 4, 3</value>
   </data>
   <data name="btn_deletar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>92, 29</value>
+    <value>79, 29</value>
   </data>
   <data name="btn_deletar.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -393,22 +393,22 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btn_deletar.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>pnl_cadastroclientes</value>
   </data>
   <data name="&gt;&gt;btn_deletar.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>7</value>
   </data>
   <data name="dtg_banco.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
   <data name="dtg_banco.Location" type="System.Drawing.Point, System.Drawing">
-    <value>460, 60</value>
+    <value>22, 31</value>
   </data>
   <data name="dtg_banco.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 3, 4, 3</value>
   </data>
   <data name="dtg_banco.Size" type="System.Drawing.Size, System.Drawing">
-    <value>459, 258</value>
+    <value>249, 273</value>
   </data>
   <data name="dtg_banco.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -420,37 +420,10 @@
     <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;dtg_banco.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>pnl_datagridcadastro</value>
   </data>
   <data name="&gt;&gt;dtg_banco.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="pictureBox1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-2, -5</value>
-  </data>
-  <data name="pictureBox1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 3, 4, 3</value>
-  </data>
-  <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>946, 58</value>
-  </data>
-  <data name="pictureBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
-    <value>pictureBox1</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>0</value>
   </data>
   <data name="cbx_inativo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -462,7 +435,7 @@
     <value>NoControl</value>
   </data>
   <data name="cbx_inativo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>140, 391</value>
+    <value>229, 315</value>
   </data>
   <data name="cbx_inativo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 3, 4, 3</value>
@@ -486,10 +459,10 @@
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbx_inativo.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>pnl_cadastroclientes</value>
   </data>
   <data name="&gt;&gt;cbx_inativo.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>10</value>
   </data>
   <data name="pictureBox2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -727,7 +700,7 @@
 </value>
   </data>
   <data name="pictureBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>810, 328</value>
+    <value>1258, 565</value>
   </data>
   <data name="pictureBox2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 3, 4, 3</value>
@@ -754,13 +727,13 @@
     <value>3</value>
   </data>
   <data name="txt_id.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 103</value>
+    <value>1, 27</value>
   </data>
   <data name="txt_id.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 3, 4, 3</value>
   </data>
   <data name="txt_id.Size" type="System.Drawing.Size, System.Drawing">
-    <value>132, 23</value>
+    <value>81, 23</value>
   </data>
   <data name="txt_id.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -775,28 +748,28 @@
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;txt_id.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>pnl_cadastroclientes</value>
   </data>
   <data name="&gt;&gt;txt_id.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>2</value>
   </data>
   <data name="lbl_id.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lbl_id.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 11.25pt</value>
+    <value>Times New Roman, 12pt</value>
   </data>
   <data name="lbl_id.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="lbl_id.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 83</value>
+    <value>-1, 7</value>
   </data>
   <data name="lbl_id.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 0, 4, 0</value>
   </data>
   <data name="lbl_id.Size" type="System.Drawing.Size, System.Drawing">
-    <value>24, 17</value>
+    <value>25, 19</value>
   </data>
   <data name="lbl_id.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -814,43 +787,10 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lbl_id.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>pnl_cadastroclientes</value>
   </data>
   <data name="&gt;&gt;lbl_id.ZOrder" xml:space="preserve">
-    <value>16</value>
-  </data>
-  <data name="btn_listar.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="btn_listar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btn_listar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>576, 382</value>
-  </data>
-  <data name="btn_listar.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 3, 4, 3</value>
-  </data>
-  <data name="btn_listar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>93, 29</value>
-  </data>
-  <data name="btn_listar.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
-  </data>
-  <data name="btn_listar.Text" xml:space="preserve">
-    <value>Listar</value>
-  </data>
-  <data name="&gt;&gt;btn_listar.Name" xml:space="preserve">
-    <value>btn_listar</value>
-  </data>
-  <data name="&gt;&gt;btn_listar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btn_listar.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;btn_listar.ZOrder" xml:space="preserve">
-    <value>9</value>
   </data>
   <data name="btn_editar.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -859,13 +799,13 @@
     <value>NoControl</value>
   </data>
   <data name="btn_editar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>701, 383</value>
+    <value>63, 426</value>
   </data>
   <data name="btn_editar.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 3, 4, 3</value>
   </data>
   <data name="btn_editar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>92, 29</value>
+    <value>79, 29</value>
   </data>
   <data name="btn_editar.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -880,10 +820,10 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btn_editar.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>pnl_cadastroclientes</value>
   </data>
   <data name="&gt;&gt;btn_editar.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>4</value>
   </data>
   <data name="btn_limparCampos.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -892,13 +832,13 @@
     <value>NoControl</value>
   </data>
   <data name="btn_limparCampos.Location" type="System.Drawing.Point, System.Drawing">
-    <value>621, 420</value>
+    <value>98, 479</value>
   </data>
   <data name="btn_limparCampos.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 3, 4, 3</value>
   </data>
   <data name="btn_limparCampos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>119, 29</value>
+    <value>129, 29</value>
   </data>
   <data name="btn_limparCampos.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -913,28 +853,28 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btn_limparCampos.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>pnl_cadastroclientes</value>
   </data>
   <data name="&gt;&gt;btn_limparCampos.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>5</value>
   </data>
   <data name="lbl_dataCadastro.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lbl_dataCadastro.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 11.25pt</value>
+    <value>Times New Roman, 12pt</value>
   </data>
   <data name="lbl_dataCadastro.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="lbl_dataCadastro.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 320</value>
+    <value>0, 244</value>
   </data>
   <data name="lbl_dataCadastro.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 0, 4, 0</value>
   </data>
   <data name="lbl_dataCadastro.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 17</value>
+    <value>117, 19</value>
   </data>
   <data name="lbl_dataCadastro.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -949,16 +889,16 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lbl_dataCadastro.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>pnl_cadastroclientes</value>
   </data>
   <data name="&gt;&gt;lbl_dataCadastro.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>15</value>
   </data>
   <data name="dtp_dataCadastro.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 346</value>
+    <value>3, 270</value>
   </data>
   <data name="dtp_dataCadastro.Size" type="System.Drawing.Size, System.Drawing">
-    <value>295, 23</value>
+    <value>293, 23</value>
   </data>
   <data name="dtp_dataCadastro.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -970,10 +910,10 @@
     <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;dtp_dataCadastro.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>pnl_cadastroclientes</value>
   </data>
   <data name="&gt;&gt;dtp_dataCadastro.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>0</value>
   </data>
   <data name="btn_buscar.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -982,13 +922,13 @@
     <value>NoControl</value>
   </data>
   <data name="btn_buscar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>341, 157</value>
+    <value>24, 410</value>
   </data>
   <data name="btn_buscar.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 3, 4, 3</value>
   </data>
   <data name="btn_buscar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>93, 29</value>
+    <value>79, 29</value>
   </data>
   <data name="btn_buscar.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
@@ -1003,16 +943,19 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btn_buscar.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>pnl_datagridcadastro</value>
   </data>
   <data name="&gt;&gt;btn_buscar.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="btn_voltarmenu.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
   <data name="btn_voltarmenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 462</value>
+    <value>27, 629</value>
   </data>
   <data name="btn_voltarmenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+    <value>79, 29</value>
   </data>
   <data name="btn_voltarmenu.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
@@ -1030,6 +973,48 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btn_voltarmenu.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="pnl_cadastroclientes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>27, 43</value>
+  </data>
+  <data name="pnl_cadastroclientes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>328, 565</value>
+  </data>
+  <data name="pnl_cadastroclientes.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="&gt;&gt;pnl_cadastroclientes.Name" xml:space="preserve">
+    <value>pnl_cadastroclientes</value>
+  </data>
+  <data name="&gt;&gt;pnl_cadastroclientes.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnl_cadastroclientes.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pnl_cadastroclientes.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="pnl_datagridcadastro.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1013, 43</value>
+  </data>
+  <data name="pnl_datagridcadastro.Size" type="System.Drawing.Size, System.Drawing">
+    <value>297, 474</value>
+  </data>
+  <data name="pnl_datagridcadastro.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="&gt;&gt;pnl_datagridcadastro.Name" xml:space="preserve">
+    <value>pnl_datagridcadastro</value>
+  </data>
+  <data name="&gt;&gt;pnl_datagridcadastro.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnl_datagridcadastro.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pnl_datagridcadastro.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -15255,7 +15240,7 @@
     <value>Stretch</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>933, 519</value>
+    <value>1368, 749</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -15561,6 +15546,9 @@
         AA/////8/////AAAA//////8/////wAAf//////8///////////////8///////////////8////////
         ///////8///////////////8///////////////8///////////////8
 </value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 3, 5, 3</value>

@@ -58,7 +58,6 @@ namespace BarberShop.Forms
 
         private void Frm_Serviços_Load(object sender, EventArgs e)
         {
-            Application.DoEvents();
             AtualizarDataTable();
         }
         private void Buscar()
@@ -198,7 +197,6 @@ namespace BarberShop.Forms
             try
             {
                 processando = true;
-                btn_listar.Enabled = false;
 
                 if (dgv_tabelaServicos.DataSource is DataTable oldTable)
                 {
@@ -216,7 +214,6 @@ namespace BarberShop.Forms
             }
             finally
             {
-                btn_listar.Enabled = true;
                 processando = false;
             }
         }
@@ -241,14 +238,7 @@ namespace BarberShop.Forms
 
         private void btn_buscar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txt_nome.Text))
-            {
-                AtualizarDataTable();
-            }
-            else
-            {
-                Buscar();
-            }
+            Buscar();
         }
 
         private void btn_deletar_Click(object sender, EventArgs e)
@@ -273,8 +263,8 @@ namespace BarberShop.Forms
 
         private void btn_menu_Click(object sender, EventArgs e)
         {
-            //Frm_TelaPrincipal form = new Frm_TelaPrincipal();
-            //form.ShowDialog();
+            Frm_TelaPrincipal form = new Frm_TelaPrincipal();
+            form.ShowDialog();
             this.Close();
         }
     }

@@ -35,7 +35,7 @@
             lbl_agendamentos = new Label();
             lbl_Servicos = new Label();
             lbl_cadastroclientes = new Label();
-            button1 = new Button();
+            bnt_sair = new Button();
             SuspendLayout();
             // 
             // btn_Agendamentos
@@ -119,15 +119,20 @@
             lbl_cadastroclientes.TabIndex = 5;
             lbl_cadastroclientes.Text = "Cadastro de clientes";
             // 
-            // button1
+            // bnt_sair
             // 
-            button1.Location = new Point(54, 501);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 29);
-            button1.TabIndex = 6;
-            button1.Text = "Sair";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            bnt_sair.BackColor = Color.Transparent;
+            bnt_sair.FlatAppearance.MouseDownBackColor = Color.White;
+            bnt_sair.FlatAppearance.MouseOverBackColor = Color.White;
+            bnt_sair.FlatStyle = FlatStyle.Flat;
+            bnt_sair.ForeColor = Color.FromArgb(255, 128, 0);
+            bnt_sair.Location = new Point(68, 492);
+            bnt_sair.Name = "bnt_sair";
+            bnt_sair.Size = new Size(75, 29);
+            bnt_sair.TabIndex = 6;
+            bnt_sair.Text = "Sair";
+            bnt_sair.UseVisualStyleBackColor = false;
+            bnt_sair.Click += button1_Click;
             // 
             // Frm_TelaPrincipal
             // 
@@ -135,8 +140,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1029, 624);
-            Controls.Add(button1);
+            ClientSize = new Size(1368, 749);
+            Controls.Add(bnt_sair);
             Controls.Add(lbl_cadastroclientes);
             Controls.Add(lbl_Servicos);
             Controls.Add(lbl_agendamentos);
@@ -163,6 +168,6 @@
         private Label lbl_agendamentos;
         private Label lbl_Servicos;
         private Label lbl_cadastroclientes;
-        private Button button1;
+        private Button bnt_sair;
     }
 }

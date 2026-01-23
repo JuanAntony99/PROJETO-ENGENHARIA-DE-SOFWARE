@@ -61,12 +61,14 @@
             // 
             // btn_salvar
             // 
+            btn_salvar.BackColor = Color.FromArgb(14, 14, 14);
+            btn_salvar.ForeColor = Color.FromArgb(255, 128, 0);
             btn_salvar.Location = new Point(424, 302);
             btn_salvar.Name = "btn_salvar";
-            btn_salvar.Size = new Size(97, 23);
+            btn_salvar.Size = new Size(79, 29);
             btn_salvar.TabIndex = 2;
             btn_salvar.Text = "Salvar";
-            btn_salvar.UseVisualStyleBackColor = true;
+            btn_salvar.UseVisualStyleBackColor = false;
             btn_salvar.Click += btn_salvar_Click;
             // 
             // pct_icone
@@ -83,9 +85,9 @@
             // lbl_agendamento
             // 
             lbl_agendamento.AutoSize = true;
-            lbl_agendamento.BackColor = Color.Transparent;
+            lbl_agendamento.BackColor = Color.FromArgb(14, 14, 14);
             lbl_agendamento.Font = new Font("Segoe UI", 15F);
-            lbl_agendamento.ForeColor = SystemColors.ButtonFace;
+            lbl_agendamento.ForeColor = Color.FromArgb(255, 128, 0);
             lbl_agendamento.Location = new Point(147, 96);
             lbl_agendamento.Name = "lbl_agendamento";
             lbl_agendamento.Size = new Size(105, 28);
@@ -95,9 +97,9 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
+            label1.BackColor = Color.FromArgb(14, 14, 14);
             label1.Font = new Font("Segoe UI", 15F);
-            label1.ForeColor = SystemColors.ButtonFace;
+            label1.ForeColor = Color.FromArgb(255, 128, 0);
             label1.Location = new Point(606, 96);
             label1.Name = "label1";
             label1.Size = new Size(90, 28);
@@ -108,7 +110,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.jovem_na_barbearia_aparando_cabelo;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(942, 530);
             Controls.Add(label1);
@@ -117,8 +119,9 @@
             Controls.Add(btn_salvar);
             Controls.Add(dtp_Fim);
             Controls.Add(dtp_Inicio);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Frm_GerarRelatorio";
-            Text = "Frm_GerarRelatorio";
+            Text = "BarberShop";
             Load += Frm_GerarRelatorio_Load;
             ((System.ComponentModel.ISupportInitialize)pct_icone).EndInit();
             ResumeLayout(false);

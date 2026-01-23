@@ -21,7 +21,7 @@ namespace BarberShop
             frm.TopLevel = false;
             frm.FormBorderStyle = FormBorderStyle.None;
             frm.Dock = DockStyle.Fill;
-            //this.Controls.Clear();
+            this.Controls.Clear();
             this.Controls.Add(frm);
             frm.BringToFront();
             frm.Show();

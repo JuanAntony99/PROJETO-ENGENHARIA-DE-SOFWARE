@@ -60,7 +60,6 @@ namespace projeto
 
         private void Frm_CadastroClientes_Load(object sender, EventArgs e)
         {
-            Application.DoEvents();
             AtualizarDataTable();
         }
         private void AtualizarDataTable()
@@ -70,7 +69,6 @@ namespace projeto
             try
             {
                 processando = true;
-                btn_listar.Enabled = false;
 
                 if (dtg_banco.DataSource is DataTable oldTable)
                 {
@@ -88,7 +86,6 @@ namespace projeto
             }
             finally
             {
-                btn_listar.Enabled = true;
                 processando = false;
             }
         }
@@ -269,21 +266,19 @@ namespace projeto
 
         private void bnt_buscar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txt_nome.Text))
-            {
-                AtualizarDataTable();
-            }
-            else
-            {
-                Buscar();
-            }
+            Buscar();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //Frm_TelaPrincipal form = new Frm_TelaPrincipal();
-            //form.ShowDialog();
+            Frm_TelaPrincipal form = new Frm_TelaPrincipal();
+            form.ShowDialog();
             this.Close();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -32,10 +32,6 @@ namespace BarberShop.Forms
 
         private void Frm_TeladeAgendamento_Load(object sender, EventArgs e)
         {
-            Application.DoEvents();
-            dtp_dataAgendamento.Format = DateTimePickerFormat.Custom;
-            dtp_dataAgendamento.CustomFormat = "dd/MM/yyyy HH:mm";
-            dtp_dataAgendamento.ShowUpDown = true;
             AtualizarDataTable();
         }
         private void prencher_cmbCliente()
@@ -120,57 +116,31 @@ namespace BarberShop.Forms
 
             return selecionar_id_datagrid(rowIndex);
         }
-        private void exibirDadosPorID(int rowIndex)
-        {
-            int id = selecionar_id_datagrid(rowIndex);
-            if (id == 0)
-                return;
+        //private void exibirDadosPorID(int rowIndex)
+        //{
+        //    int id = selecionar_id_datagrid(rowIndex);
+        //    if (id == 0)
+        //        return;
 
-            DataTable servicosdatatable = dp.VerificarAgendamento_porId(id);
-            if (servicosdatatable != null && servicosdatatable.Rows.Count > 0)
-            {
-                try
-                {
-                    DataTable agen = dtg_agendamento.DataSource as DataTable;
+        //    using (DataTable servicosdatatable = dp.VerificarAgendamento_porId(id))
+        //    {
+        //        if (servicosdatatable != null && servicosdatatable.Rows.Count > 0)
+        //        {
+        //            try
+        //            {
+        //                DataRow agendamentos = servicosdatatable.Rows[0];
 
-                    if (agen != null && servicosdatatable.Rows.Count > 0)
-                    {
-                        DataRow row = servicosdatatable.Rows[0];
-
-                        DataRow rowGrid = agen.Select($"id = {row["id"]}").FirstOrDefault();
-
-                        if (rowGrid != null)
-                        {
-                            servicosdatatable.Columns.Add("clientes", typeof(string));
-                            servicosdatatable.Columns.Add("funcionarios", typeof(string));
-                            servicosdatatable.Columns.Add("servicos", typeof(string));
-
-                            row["clientes"] = rowGrid["clientes"];
-                            row["funcionarios"] = rowGrid["funcionarios"];
-                            row["servicos"] = rowGrid["servicos"];
-                        }
-                    }
-
-                    cmb_idCliente.DataSource = servicosdatatable;
-                    cmb_idCliente.DisplayMember = "clientes";
-                    cmb_idCliente.ValueMember = "cliente_id";
-
-                    cmb_idFuncionario.DataSource = servicosdatatable;
-                    cmb_idFuncionario.DisplayMember = "funcionarios";
-                    cmb_idFuncionario.ValueMember = "funcionario_id";
-
-                    cmb_idServico.DataSource = servicosdatatable;
-                    cmb_idServico.DisplayMember = "servicos";
-                    cmb_idServico.ValueMember = "servico_id";
-
-                    dtp_dataAgendamento.Value = Convert.ToDateTime(servicosdatatable.Rows[0]["datahora_agendamento"]);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Ocorreu um erro: " + ex.Message);
-                }
-            }
-        }
+        //                cmb_idCliente.Text = agendamentos["cliente_id"]?.ToString() ?? string.Empty;
+        //                cmb_idFuncionario.Text = agendamentos["funcionario_id"]?.ToString() ?? string.Empty;
+        //                cmb_idServico.Text = agendamentos["servico_id"]?.ToString() ?? string.Empty;
+        //            }
+        //            catch (Exception ex)
+        //            {
+        //                MessageBox.Show("Ocorreu um erro: " + ex.Message);
+        //            }
+        //        }
+        //    }
+        //}
         private bool VerificarCamposVazios()
         {
             if (string.IsNullOrWhiteSpace(cmb_idCliente.Text) || string.IsNullOrWhiteSpace(cmb_idFuncionario.Text) || string.IsNullOrWhiteSpace(cmb_idServico.Text))
@@ -229,7 +199,7 @@ namespace BarberShop.Forms
             if (result == DialogResult.Yes)
             {
                 dp.AtualizarAgendamento(agen);
-                Buscar();
+                AtualizarDataTable();
             }
         }
         private void AtualizarDataTable()
@@ -239,7 +209,7 @@ namespace BarberShop.Forms
             try
             {
                 processando = true;
-                btn_Listar.Enabled = false;
+                btn_buscar.Enabled = false;
 
                 if (dtg_agendamento.DataSource is DataTable oldTable)
                 {
@@ -257,7 +227,7 @@ namespace BarberShop.Forms
             }
             finally
             {
-                btn_Listar.Enabled = true;
+                btn_buscar.Enabled = true;
                 processando = false;
             }
         }
@@ -288,27 +258,14 @@ namespace BarberShop.Forms
                 return;
             }
 
-            int Cliente_Id = Convert.ToInt32(cmb_idCliente.SelectedValue);
-            int Funcionario_Id = Convert.ToInt32(cmb_idFuncionario.SelectedValue);
-            int Servico_Id = Convert.ToInt32(cmb_idServico.SelectedValue);
-            DateTime DataHora_agendamento = dtp_dataAgendamento.Value;
+            Agendamento agen = new Agendamento();
 
-            if (!dp.ExisteAgendamento(DataHora_agendamento, Cliente_Id, Servico_Id))
-            {
-                Agendamento agen = new Agendamento();
+            agen.Cliente_Id = Convert.ToInt32(cmb_idCliente.SelectedValue);
+            agen.Funcionario_Id = Convert.ToInt32(cmb_idFuncionario.SelectedValue);
+            agen.Servico_Id = Convert.ToInt32(cmb_idServico.SelectedValue);
+            agen.DataHora_agendamento = dtp_dataAgendamento.Value;
 
-                agen.Cliente_Id = Cliente_Id;
-                agen.Funcionario_Id = Funcionario_Id;
-                agen.Servico_Id = Servico_Id;
-                agen.DataHora_agendamento = DataHora_agendamento;
-
-                dp.InserirAgendamento(agen);
-            }
-            else
-            {
-                MessageBox.Show("Existe agendamento nesse horário.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            AtualizarDataTable();
+            dp.InserirAgendamento(agen);
         }
         private void LimparCampos()
         {
@@ -344,7 +301,7 @@ namespace BarberShop.Forms
 
         private void dtg_agendamento_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            exibirDadosPorID(e.RowIndex);
+            //exibirDadosPorID(e.RowIndex);
         }
 
         private void dtp_buscarAgendamento_ValueChanged(object sender, EventArgs e)
@@ -359,15 +316,29 @@ namespace BarberShop.Forms
 
         private void btn_menu_Click(object sender, EventArgs e)
         {
-            //Frm_TelaPrincipal form = new Frm_TelaPrincipal();
-            //form.ShowDialog();
+            Frm_TelaPrincipal form = new Frm_TelaPrincipal();
+            form.ShowDialog();
             this.Close();
         }
 
-        private void btn_GerarRelatorio_Click(object sender, EventArgs e)
+        private void cmb_idCliente_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Frm_GerarRelatorio form = new Frm_GerarRelatorio();
-            form.ShowDialog();
+
+        }
+
+        private void lbl_data_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_funcionarioid_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_id_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

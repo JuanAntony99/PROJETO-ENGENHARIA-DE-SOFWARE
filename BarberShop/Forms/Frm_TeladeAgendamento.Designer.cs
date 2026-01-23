@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_TeladeAgendamento));
             lbl_id = new Label();
             lbl_clienteid = new Label();
@@ -46,24 +45,28 @@
             btn_Deletar = new Button();
             btn_LimparCampos = new Button();
             btn_Editar = new Button();
-            btn_Listar = new Button();
+            btn_buscar = new Button();
             cmb_idCliente = new ComboBox();
             cmb_idFuncionario = new ComboBox();
             cmb_idServico = new ComboBox();
             btn_voltarmenu = new Button();
-            btn_GerarRelatorio = new Button();
+            pnl_agendamentos = new Panel();
+            pnl_datagridagendamentos = new Panel();
             ((System.ComponentModel.ISupportInitialize)dtg_agendamento).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pct_icone).BeginInit();
+            pnl_agendamentos.SuspendLayout();
+            pnl_datagridagendamentos.SuspendLayout();
             SuspendLayout();
             // 
             // lbl_id
             // 
             lbl_id.AutoSize = true;
             lbl_id.BackColor = Color.Transparent;
-            lbl_id.ForeColor = SystemColors.ButtonFace;
-            lbl_id.Location = new Point(41, 43);
+            lbl_id.Font = new Font("Times New Roman", 12F);
+            lbl_id.ForeColor = Color.FromArgb(255, 128, 0);
+            lbl_id.Location = new Point(24, 60);
             lbl_id.Name = "lbl_id";
-            lbl_id.Size = new Size(17, 15);
+            lbl_id.Size = new Size(22, 19);
             lbl_id.TabIndex = 0;
             lbl_id.Text = "Id";
             lbl_id.Visible = false;
@@ -72,10 +75,11 @@
             // 
             lbl_clienteid.AutoSize = true;
             lbl_clienteid.BackColor = Color.Transparent;
-            lbl_clienteid.ForeColor = SystemColors.ButtonFace;
-            lbl_clienteid.Location = new Point(41, 101);
+            lbl_clienteid.Font = new Font("Times New Roman", 12F);
+            lbl_clienteid.ForeColor = Color.FromArgb(255, 128, 0);
+            lbl_clienteid.Location = new Point(158, 60);
             lbl_clienteid.Name = "lbl_clienteid";
-            lbl_clienteid.Size = new Size(55, 15);
+            lbl_clienteid.Size = new Size(64, 19);
             lbl_clienteid.TabIndex = 1;
             lbl_clienteid.Text = "Id cliente";
             // 
@@ -83,74 +87,74 @@
             // 
             lbl_funcionarioid.AutoSize = true;
             lbl_funcionarioid.BackColor = Color.Transparent;
-            lbl_funcionarioid.ForeColor = SystemColors.ButtonFace;
-            lbl_funcionarioid.Location = new Point(177, 43);
+            lbl_funcionarioid.Font = new Font("Times New Roman", 12F);
+            lbl_funcionarioid.ForeColor = Color.FromArgb(255, 128, 0);
+            lbl_funcionarioid.Location = new Point(158, 130);
             lbl_funcionarioid.Name = "lbl_funcionarioid";
-            lbl_funcionarioid.Size = new Size(81, 15);
+            lbl_funcionarioid.Size = new Size(92, 19);
             lbl_funcionarioid.TabIndex = 2;
             lbl_funcionarioid.Text = "Id funcionario";
+            lbl_funcionarioid.Click += lbl_funcionarioid_Click;
             // 
             // lbl_servicoid
             // 
             lbl_servicoid.AutoSize = true;
             lbl_servicoid.BackColor = Color.Transparent;
-            lbl_servicoid.ForeColor = SystemColors.ButtonFace;
-            lbl_servicoid.Location = new Point(177, 104);
+            lbl_servicoid.Font = new Font("Times New Roman", 12F);
+            lbl_servicoid.ForeColor = Color.FromArgb(255, 128, 0);
+            lbl_servicoid.Location = new Point(24, 130);
             lbl_servicoid.Name = "lbl_servicoid";
-            lbl_servicoid.Size = new Size(57, 15);
+            lbl_servicoid.Size = new Size(69, 19);
             lbl_servicoid.TabIndex = 3;
             lbl_servicoid.Text = "Id serviço";
             // 
             // txt_id
             // 
-            txt_id.Location = new Point(41, 61);
+            txt_id.BackColor = Color.White;
+            txt_id.ForeColor = Color.Black;
+            txt_id.Location = new Point(24, 78);
             txt_id.Name = "txt_id";
-            txt_id.Size = new Size(100, 23);
+            txt_id.Size = new Size(81, 23);
             txt_id.TabIndex = 4;
             txt_id.Visible = false;
+            txt_id.TextChanged += txt_id_TextChanged;
             // 
             // lbl_agendamento
             // 
             lbl_agendamento.AutoSize = true;
-            lbl_agendamento.BackColor = Color.Transparent;
-            lbl_agendamento.ForeColor = SystemColors.ButtonFace;
-            lbl_agendamento.Location = new Point(405, 37);
+            lbl_agendamento.BackColor = Color.FromArgb(14, 14, 14);
+            lbl_agendamento.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbl_agendamento.ForeColor = Color.FromArgb(255, 128, 0);
+            lbl_agendamento.Location = new Point(49, 14);
             lbl_agendamento.Name = "lbl_agendamento";
-            lbl_agendamento.Size = new Size(88, 15);
+            lbl_agendamento.Size = new Size(176, 32);
             lbl_agendamento.TabIndex = 8;
             lbl_agendamento.Text = "Agendamentos";
             lbl_agendamento.Click += label1_Click;
             // 
             // dtg_agendamento
             // 
+            dtg_agendamento.BackgroundColor = Color.FromArgb(255, 128, 0);
             dtg_agendamento.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtg_agendamento.Location = new Point(21, 121);
+            dtg_agendamento.Name = "dtg_agendamento";
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = SystemColors.Window;
             dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle1.ForeColor = Color.Black;
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
-            dtg_agendamento.DefaultCellStyle = dataGridViewCellStyle1;
-            dtg_agendamento.Location = new Point(405, 104);
-            dtg_agendamento.Name = "dtg_agendamento";
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dtg_agendamento.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dtg_agendamento.Size = new Size(261, 273);
+            dtg_agendamento.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dtg_agendamento.Size = new Size(249, 273);
             dtg_agendamento.TabIndex = 9;
             dtg_agendamento.CellClick += dtg_agendamento_CellClick;
             // 
             // dtp_buscarAgendamento
             // 
-            dtp_buscarAgendamento.Location = new Point(403, 61);
+            dtp_buscarAgendamento.Location = new Point(21, 52);
             dtp_buscarAgendamento.Name = "dtp_buscarAgendamento";
-            dtp_buscarAgendamento.Size = new Size(263, 23);
+            dtp_buscarAgendamento.Size = new Size(249, 23);
             dtp_buscarAgendamento.TabIndex = 10;
             dtp_buscarAgendamento.ValueChanged += dtp_buscarAgendamento_ValueChanged;
             // 
@@ -158,16 +162,18 @@
             // 
             lbl_data.AutoSize = true;
             lbl_data.BackColor = Color.Transparent;
-            lbl_data.ForeColor = SystemColors.ButtonFace;
-            lbl_data.Location = new Point(41, 163);
+            lbl_data.Font = new Font("Times New Roman", 12F);
+            lbl_data.ForeColor = Color.FromArgb(255, 128, 0);
+            lbl_data.Location = new Point(14, 224);
             lbl_data.Name = "lbl_data";
-            lbl_data.Size = new Size(31, 15);
+            lbl_data.Size = new Size(38, 19);
             lbl_data.TabIndex = 11;
             lbl_data.Text = "Data";
+            lbl_data.Click += lbl_data_Click;
             // 
             // dtp_dataAgendamento
             // 
-            dtp_dataAgendamento.Location = new Point(41, 190);
+            dtp_dataAgendamento.Location = new Point(14, 246);
             dtp_dataAgendamento.Name = "dtp_dataAgendamento";
             dtp_dataAgendamento.Size = new Size(236, 23);
             dtp_dataAgendamento.TabIndex = 12;
@@ -177,7 +183,7 @@
             pct_icone.BackColor = Color.Transparent;
             pct_icone.BackgroundImage = (Image)resources.GetObject("pct_icone.BackgroundImage");
             pct_icone.BackgroundImageLayout = ImageLayout.Center;
-            pct_icone.Location = new Point(672, 271);
+            pct_icone.Location = new Point(1258, 565);
             pct_icone.Name = "pct_icone";
             pct_icone.Size = new Size(116, 167);
             pct_icone.TabIndex = 13;
@@ -185,11 +191,11 @@
             // 
             // btn_Salvar
             // 
-            btn_Salvar.BackColor = Color.Transparent;
-            btn_Salvar.ForeColor = SystemColors.ActiveCaptionText;
-            btn_Salvar.Location = new Point(59, 278);
+            btn_Salvar.BackColor = Color.FromArgb(14, 14, 14);
+            btn_Salvar.ForeColor = Color.FromArgb(255, 128, 0);
+            btn_Salvar.Location = new Point(40, 341);
             btn_Salvar.Name = "btn_Salvar";
-            btn_Salvar.Size = new Size(75, 23);
+            btn_Salvar.Size = new Size(79, 29);
             btn_Salvar.TabIndex = 14;
             btn_Salvar.Text = "Salvar";
             btn_Salvar.UseVisualStyleBackColor = false;
@@ -197,11 +203,11 @@
             // 
             // btn_Deletar
             // 
-            btn_Deletar.BackColor = Color.Transparent;
-            btn_Deletar.ForeColor = SystemColors.ActiveCaptionText;
-            btn_Deletar.Location = new Point(177, 278);
+            btn_Deletar.BackColor = Color.FromArgb(14, 14, 14);
+            btn_Deletar.ForeColor = Color.FromArgb(255, 128, 0);
+            btn_Deletar.Location = new Point(146, 341);
             btn_Deletar.Name = "btn_Deletar";
-            btn_Deletar.Size = new Size(75, 23);
+            btn_Deletar.Size = new Size(79, 29);
             btn_Deletar.TabIndex = 15;
             btn_Deletar.Text = "Deletar";
             btn_Deletar.UseVisualStyleBackColor = false;
@@ -209,84 +215,122 @@
             // 
             // btn_LimparCampos
             // 
-            btn_LimparCampos.ForeColor = SystemColors.ActiveCaptionText;
-            btn_LimparCampos.Location = new Point(94, 388);
+            btn_LimparCampos.BackColor = Color.FromArgb(14, 14, 14);
+            btn_LimparCampos.ForeColor = Color.FromArgb(255, 128, 0);
+            btn_LimparCampos.Location = new Point(75, 451);
             btn_LimparCampos.Name = "btn_LimparCampos";
-            btn_LimparCampos.Size = new Size(129, 23);
+            btn_LimparCampos.Size = new Size(129, 29);
             btn_LimparCampos.TabIndex = 16;
             btn_LimparCampos.Text = "Limpar campos";
-            btn_LimparCampos.UseVisualStyleBackColor = true;
+            btn_LimparCampos.UseVisualStyleBackColor = false;
             btn_LimparCampos.Click += btn_LimparCampos_Click;
             // 
             // btn_Editar
             // 
-            btn_Editar.ForeColor = SystemColors.ActiveCaptionText;
-            btn_Editar.Location = new Point(177, 334);
+            btn_Editar.BackColor = Color.FromArgb(14, 14, 14);
+            btn_Editar.ForeColor = Color.FromArgb(255, 128, 0);
+            btn_Editar.Location = new Point(40, 398);
             btn_Editar.Name = "btn_Editar";
-            btn_Editar.Size = new Size(75, 23);
+            btn_Editar.Size = new Size(79, 29);
             btn_Editar.TabIndex = 17;
             btn_Editar.Text = "Editar";
-            btn_Editar.UseVisualStyleBackColor = true;
+            btn_Editar.UseVisualStyleBackColor = false;
             btn_Editar.Click += btn_Editar_Click;
             // 
-            // btn_Listar
+            // btn_buscar
             // 
-            btn_Listar.ForeColor = SystemColors.ActiveCaptionText;
-            btn_Listar.Location = new Point(59, 334);
-            btn_Listar.Name = "btn_Listar";
-            btn_Listar.Size = new Size(75, 23);
-            btn_Listar.TabIndex = 18;
-            btn_Listar.Text = "Listar";
-            btn_Listar.UseVisualStyleBackColor = true;
-            btn_Listar.Click += btn_Listar_Click;
+            btn_buscar.BackColor = Color.FromArgb(14, 14, 14);
+            btn_buscar.ForeColor = Color.FromArgb(255, 128, 0);
+            btn_buscar.Location = new Point(21, 416);
+            btn_buscar.Name = "btn_buscar";
+            btn_buscar.Size = new Size(79, 29);
+            btn_buscar.TabIndex = 18;
+            btn_buscar.Text = "Buscar";
+            btn_buscar.UseVisualStyleBackColor = false;
+            btn_buscar.Click += btn_Listar_Click;
             // 
             // cmb_idCliente
             // 
+            cmb_idCliente.BackColor = Color.White;
             cmb_idCliente.FormattingEnabled = true;
-            cmb_idCliente.Location = new Point(41, 122);
+            cmb_idCliente.Location = new Point(158, 78);
             cmb_idCliente.Name = "cmb_idCliente";
-            cmb_idCliente.Size = new Size(100, 23);
+            cmb_idCliente.Size = new Size(81, 23);
             cmb_idCliente.TabIndex = 19;
             cmb_idCliente.DropDown += cmb_idCliente_DropDown;
+            cmb_idCliente.SelectedIndexChanged += cmb_idCliente_SelectedIndexChanged;
             // 
             // cmb_idFuncionario
             // 
+            cmb_idFuncionario.BackColor = Color.White;
             cmb_idFuncionario.FormattingEnabled = true;
-            cmb_idFuncionario.Location = new Point(177, 61);
+            cmb_idFuncionario.Location = new Point(158, 148);
             cmb_idFuncionario.Name = "cmb_idFuncionario";
-            cmb_idFuncionario.Size = new Size(100, 23);
+            cmb_idFuncionario.Size = new Size(81, 23);
             cmb_idFuncionario.TabIndex = 20;
             cmb_idFuncionario.DropDown += cmb_idFuncionario_DropDown;
             // 
             // cmb_idServico
             // 
+            cmb_idServico.BackColor = Color.White;
             cmb_idServico.FormattingEnabled = true;
-            cmb_idServico.Location = new Point(177, 122);
+            cmb_idServico.Location = new Point(24, 148);
             cmb_idServico.Name = "cmb_idServico";
-            cmb_idServico.Size = new Size(100, 23);
+            cmb_idServico.Size = new Size(81, 23);
             cmb_idServico.TabIndex = 21;
             cmb_idServico.DropDown += cmb_idServico_DropDown;
             // 
             // btn_voltarmenu
             // 
-            btn_voltarmenu.Location = new Point(405, 415);
+            btn_voltarmenu.BackColor = Color.Transparent;
+            btn_voltarmenu.FlatAppearance.MouseDownBackColor = Color.White;
+            btn_voltarmenu.FlatAppearance.MouseOverBackColor = Color.White;
+            btn_voltarmenu.FlatStyle = FlatStyle.Flat;
+            btn_voltarmenu.ForeColor = Color.FromArgb(255, 128, 0);
+            btn_voltarmenu.Location = new Point(86, 630);
             btn_voltarmenu.Name = "btn_voltarmenu";
-            btn_voltarmenu.Size = new Size(75, 23);
+            btn_voltarmenu.Size = new Size(75, 29);
             btn_voltarmenu.TabIndex = 22;
             btn_voltarmenu.Text = "Menu";
-            btn_voltarmenu.UseVisualStyleBackColor = true;
+            btn_voltarmenu.UseVisualStyleBackColor = false;
             btn_voltarmenu.Click += btn_menu_Click;
             // 
-            // btn_GerarRelatorio
+            // pnl_agendamentos
             // 
-            btn_GerarRelatorio.ForeColor = SystemColors.ActiveCaptionText;
-            btn_GerarRelatorio.Location = new Point(659, 12);
-            btn_GerarRelatorio.Name = "btn_GerarRelatorio";
-            btn_GerarRelatorio.Size = new Size(129, 23);
-            btn_GerarRelatorio.TabIndex = 23;
-            btn_GerarRelatorio.Text = "Gerar Relatório";
-            btn_GerarRelatorio.UseVisualStyleBackColor = true;
-            btn_GerarRelatorio.Click += btn_GerarRelatorio_Click;
+            pnl_agendamentos.BackColor = Color.FromArgb(14, 14, 14);
+            pnl_agendamentos.BorderStyle = BorderStyle.Fixed3D;
+            pnl_agendamentos.Controls.Add(txt_id);
+            pnl_agendamentos.Controls.Add(lbl_id);
+            pnl_agendamentos.Controls.Add(dtp_dataAgendamento);
+            pnl_agendamentos.Controls.Add(lbl_agendamento);
+            pnl_agendamentos.Controls.Add(lbl_data);
+            pnl_agendamentos.Controls.Add(cmb_idFuncionario);
+            pnl_agendamentos.Controls.Add(btn_Editar);
+            pnl_agendamentos.Controls.Add(cmb_idServico);
+            pnl_agendamentos.Controls.Add(btn_LimparCampos);
+            pnl_agendamentos.Controls.Add(btn_Deletar);
+            pnl_agendamentos.Controls.Add(cmb_idCliente);
+            pnl_agendamentos.Controls.Add(btn_Salvar);
+            pnl_agendamentos.Controls.Add(lbl_clienteid);
+            pnl_agendamentos.Controls.Add(lbl_servicoid);
+            pnl_agendamentos.Controls.Add(lbl_funcionarioid);
+            pnl_agendamentos.Location = new Point(83, 43);
+            pnl_agendamentos.Name = "pnl_agendamentos";
+            pnl_agendamentos.Size = new Size(270, 565);
+            pnl_agendamentos.TabIndex = 23;
+            // 
+            // pnl_datagridagendamentos
+            // 
+            pnl_datagridagendamentos.BackColor = Color.FromArgb(14, 14, 14);
+            pnl_datagridagendamentos.BorderStyle = BorderStyle.Fixed3D;
+            pnl_datagridagendamentos.Controls.Add(dtg_agendamento);
+            pnl_datagridagendamentos.Controls.Add(dtp_buscarAgendamento);
+            pnl_datagridagendamentos.Controls.Add(btn_buscar);
+            pnl_datagridagendamentos.ForeColor = Color.FromArgb(255, 128, 0);
+            pnl_datagridagendamentos.Location = new Point(1013, 43);
+            pnl_datagridagendamentos.Name = "pnl_datagridagendamentos";
+            pnl_datagridagendamentos.Size = new Size(295, 474);
+            pnl_datagridagendamentos.TabIndex = 24;
             // 
             // Frm_TeladeAgendamento
             // 
@@ -295,37 +339,23 @@
             BackColor = SystemColors.Control;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(800, 450);
-            Controls.Add(btn_GerarRelatorio);
+            ClientSize = new Size(1368, 749);
+            Controls.Add(pnl_datagridagendamentos);
+            Controls.Add(pnl_agendamentos);
             Controls.Add(btn_voltarmenu);
-            Controls.Add(cmb_idServico);
-            Controls.Add(cmb_idFuncionario);
-            Controls.Add(cmb_idCliente);
-            Controls.Add(btn_Listar);
-            Controls.Add(btn_Editar);
-            Controls.Add(btn_LimparCampos);
-            Controls.Add(btn_Deletar);
-            Controls.Add(btn_Salvar);
             Controls.Add(pct_icone);
-            Controls.Add(dtp_dataAgendamento);
-            Controls.Add(lbl_data);
-            Controls.Add(dtp_buscarAgendamento);
-            Controls.Add(dtg_agendamento);
-            Controls.Add(lbl_agendamento);
-            Controls.Add(txt_id);
-            Controls.Add(lbl_servicoid);
-            Controls.Add(lbl_funcionarioid);
-            Controls.Add(lbl_clienteid);
-            Controls.Add(lbl_id);
             ForeColor = Color.Black;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Frm_TeladeAgendamento";
-            Text = "Frm_TeladeAgendamento";
+            Text = "BarberShop";
+            WindowState = FormWindowState.Maximized;
             Load += Frm_TeladeAgendamento_Load;
             ((System.ComponentModel.ISupportInitialize)dtg_agendamento).EndInit();
             ((System.ComponentModel.ISupportInitialize)pct_icone).EndInit();
+            pnl_agendamentos.ResumeLayout(false);
+            pnl_agendamentos.PerformLayout();
+            pnl_datagridagendamentos.ResumeLayout(false);
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -345,11 +375,12 @@
         private Button btn_Deletar;
         private Button btn_LimparCampos;
         private Button btn_Editar;
-        private Button btn_Listar;
+        private Button btn_buscar;
         private ComboBox cmb_idCliente;
         private ComboBox cmb_idFuncionario;
         private ComboBox cmb_idServico;
         private Button btn_voltarmenu;
-        private Button btn_GerarRelatorio;
+        private Panel pnl_agendamentos;
+        private Panel pnl_datagridagendamentos;
     }
 }
