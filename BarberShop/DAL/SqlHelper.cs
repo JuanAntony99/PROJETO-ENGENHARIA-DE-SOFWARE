@@ -333,7 +333,7 @@ namespace BarberShop.DAL
             }
         }
 
-        public DataTable Selecionar_Join(string[] tabelasJoin, string[] colunasLigacao, DateTime? inicio = null, DateTime? fim = null)
+        public DataTable Selecionar_Join(string[] tabelasJoin, string[] colunasLigacao, DateTime? inicio = null, DateTime? fim = null, int limit = 100)
         {
             DataTable dt = new DataTable();
             StringBuilder sql = new StringBuilder();
@@ -367,7 +367,7 @@ namespace BarberShop.DAL
                 sql.Append(" WHERE a.datahora_agendamento BETWEEN @inicio AND @fim ");
             }
 
-            sql.Append(" ORDER BY a.datahora_agendamento ASC LIMIT 100");
+            sql.Append($" ORDER BY a.datahora_agendamento ASC LIMIT {limit}");
 
             using (MySqlCommand cmd = new MySqlCommand(sql.ToString(), _conexao))
             {

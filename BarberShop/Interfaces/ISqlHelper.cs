@@ -16,6 +16,6 @@ namespace BarberShop.Interfaces
         public DataTable Selecionar_porCampo(string campo, string valorBusca, string dadosTable);
         public bool Desativar_Ativar(int id, bool escolha, string campo);
         public DataTable Selecionar_porDataTime(string campo, DateTime dataInicio, DateTime dataFim);
-        public DataTable Selecionar_Join(string[] tabelasJoin, string[] colunasLigacao, DateTime? inicio = null, DateTime? fim = null);
+        public DataTable Selecionar_Join(string[] tabelasJoin, string[] colunasLigacao, DateTime? inicio = null, DateTime? fim = null, int limit = 100);
     }
 }

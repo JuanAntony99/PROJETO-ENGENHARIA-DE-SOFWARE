@@ -51,6 +51,7 @@
             cmb_idFuncionario = new ComboBox();
             cmb_idServico = new ComboBox();
             btn_voltarmenu = new Button();
+            btn_GerarRelatorio = new Button();
             ((System.ComponentModel.ISupportInitialize)dtg_agendamento).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pct_icone).BeginInit();
             SuspendLayout();
@@ -276,6 +277,17 @@
             btn_voltarmenu.UseVisualStyleBackColor = true;
             btn_voltarmenu.Click += btn_menu_Click;
             // 
+            // btn_GerarRelatorio
+            // 
+            btn_GerarRelatorio.ForeColor = SystemColors.ActiveCaptionText;
+            btn_GerarRelatorio.Location = new Point(659, 12);
+            btn_GerarRelatorio.Name = "btn_GerarRelatorio";
+            btn_GerarRelatorio.Size = new Size(129, 23);
+            btn_GerarRelatorio.TabIndex = 23;
+            btn_GerarRelatorio.Text = "Gerar Relatório";
+            btn_GerarRelatorio.UseVisualStyleBackColor = true;
+            btn_GerarRelatorio.Click += btn_GerarRelatorio_Click;
+            // 
             // Frm_TeladeAgendamento
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -284,6 +296,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
+            Controls.Add(btn_GerarRelatorio);
             Controls.Add(btn_voltarmenu);
             Controls.Add(cmb_idServico);
             Controls.Add(cmb_idFuncionario);
@@ -337,5 +350,6 @@
         private ComboBox cmb_idFuncionario;
         private ComboBox cmb_idServico;
         private Button btn_voltarmenu;
+        private Button btn_GerarRelatorio;
     }
 }

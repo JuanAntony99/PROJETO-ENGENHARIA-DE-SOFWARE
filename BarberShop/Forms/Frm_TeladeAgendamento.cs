@@ -127,49 +127,49 @@ namespace BarberShop.Forms
                 return;
 
             DataTable servicosdatatable = dp.VerificarAgendamento_porId(id);
-                if (servicosdatatable != null && servicosdatatable.Rows.Count > 0)
+            if (servicosdatatable != null && servicosdatatable.Rows.Count > 0)
+            {
+                try
                 {
-                    try
-                    {
-                        DataTable agen = dtg_agendamento.DataSource as DataTable;
+                    DataTable agen = dtg_agendamento.DataSource as DataTable;
 
-                        if (agen != null && servicosdatatable.Rows.Count > 0)
+                    if (agen != null && servicosdatatable.Rows.Count > 0)
+                    {
+                        DataRow row = servicosdatatable.Rows[0];
+
+                        DataRow rowGrid = agen.Select($"id = {row["id"]}").FirstOrDefault();
+
+                        if (rowGrid != null)
                         {
-                            DataRow row = servicosdatatable.Rows[0];
+                            servicosdatatable.Columns.Add("clientes", typeof(string));
+                            servicosdatatable.Columns.Add("funcionarios", typeof(string));
+                            servicosdatatable.Columns.Add("servicos", typeof(string));
 
-                            DataRow rowGrid = agen.Select($"id = {row["id"]}").FirstOrDefault();
-
-                            if (rowGrid != null)
-                            {
-                                servicosdatatable.Columns.Add("clientes", typeof(string));
-                                servicosdatatable.Columns.Add("funcionarios", typeof(string));
-                                servicosdatatable.Columns.Add("servicos", typeof(string));
-
-                                row["clientes"] = rowGrid["clientes"];
-                                row["funcionarios"] = rowGrid["funcionarios"];
-                                row["servicos"] = rowGrid["servicos"];
-                            }
+                            row["clientes"] = rowGrid["clientes"];
+                            row["funcionarios"] = rowGrid["funcionarios"];
+                            row["servicos"] = rowGrid["servicos"];
                         }
-
-                        cmb_idCliente.DataSource = servicosdatatable;
-                        cmb_idCliente.DisplayMember = "clientes";
-                        cmb_idCliente.ValueMember = "cliente_id";
-
-                        cmb_idFuncionario.DataSource = servicosdatatable;
-                        cmb_idFuncionario.DisplayMember = "funcionarios";
-                        cmb_idFuncionario.ValueMember = "funcionario_id";
-
-                        cmb_idServico.DataSource = servicosdatatable;
-                        cmb_idServico.DisplayMember = "servicos";
-                        cmb_idServico.ValueMember = "servico_id";
-
-                        dtp_dataAgendamento.Value = Convert.ToDateTime(servicosdatatable.Rows[0]["datahora_agendamento"]);
-                }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Ocorreu um erro: " + ex.Message);
                     }
+
+                    cmb_idCliente.DataSource = servicosdatatable;
+                    cmb_idCliente.DisplayMember = "clientes";
+                    cmb_idCliente.ValueMember = "cliente_id";
+
+                    cmb_idFuncionario.DataSource = servicosdatatable;
+                    cmb_idFuncionario.DisplayMember = "funcionarios";
+                    cmb_idFuncionario.ValueMember = "funcionario_id";
+
+                    cmb_idServico.DataSource = servicosdatatable;
+                    cmb_idServico.DisplayMember = "servicos";
+                    cmb_idServico.ValueMember = "servico_id";
+
+                    dtp_dataAgendamento.Value = Convert.ToDateTime(servicosdatatable.Rows[0]["datahora_agendamento"]);
                 }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ocorreu um erro: " + ex.Message);
+                }
+            }
         }
         private bool VerificarCamposVazios()
         {
@@ -362,6 +362,12 @@ namespace BarberShop.Forms
             //Frm_TelaPrincipal form = new Frm_TelaPrincipal();
             //form.ShowDialog();
             this.Close();
+        }
+
+        private void btn_GerarRelatorio_Click(object sender, EventArgs e)
+        {
+            Frm_GerarRelatorio form = new Frm_GerarRelatorio();
+            form.ShowDialog();
         }
     }
 }

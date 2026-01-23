@@ -34,12 +34,12 @@ namespace BarberShop.DAL
             sql.Inserir(a);
         }
 
-        public DataTable Selecionar_Join(DateTime? inicio = null, DateTime? fim = null)
+        public DataTable Selecionar_Join(DateTime? inicio = null, DateTime? fim = null, int limit = 100)
         {
             string[] tabelasRelacionadas = { "tb_clientes", "tb_funcionarios", "tb_servicos" };
             string[] chavesEstrangeiras = { "cliente_id", "funcionario_id", "servico_id" };
 
-            return sql.Selecionar_Join(tabelasRelacionadas, chavesEstrangeiras, inicio, fim);
+            return sql.Selecionar_Join(tabelasRelacionadas, chavesEstrangeiras, inicio, fim, limit);
         }
 
         public DataTable Selecionar_porCampo(string campo, string valorBusca, string dadosTable = "*")
