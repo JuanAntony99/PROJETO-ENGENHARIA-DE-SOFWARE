@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Serviços));
             dgv_tabelaServicos = new DataGridView();
             pictureBox1 = new PictureBox();
-            pictureBox2 = new PictureBox();
             lbl_id = new Label();
             lbl_preco = new Label();
             lbl_duracao = new Label();
@@ -52,7 +51,6 @@
             btn_voltarmenu = new Button();
             ((System.ComponentModel.ISupportInitialize)dgv_tabelaServicos).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
             // 
@@ -73,16 +71,6 @@
             pictureBox1.Size = new Size(804, 41);
             pictureBox1.TabIndex = 4;
             pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            pictureBox2.BackColor = Color.Black;
-            pictureBox2.Location = new Point(764, 42);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(36, 441);
-            pictureBox2.TabIndex = 5;
-            pictureBox2.TabStop = false;
             // 
             // lbl_id
             // 
@@ -222,13 +210,14 @@
             // 
             btn_listar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btn_listar.ImeMode = ImeMode.NoControl;
-            btn_listar.Location = new Point(358, 356);
+            btn_listar.Location = new Point(649, 70);
             btn_listar.Margin = new Padding(4, 3, 4, 3);
             btn_listar.Name = "btn_listar";
             btn_listar.Size = new Size(93, 29);
             btn_listar.TabIndex = 18;
             btn_listar.Text = "Listar";
             btn_listar.UseVisualStyleBackColor = true;
+            btn_listar.Visible = false;
             btn_listar.Click += btn_listar_Click;
             // 
             // btn_deletar
@@ -261,7 +250,7 @@
             // 
             btn_buscar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btn_buscar.ImeMode = ImeMode.NoControl;
-            btn_buscar.Location = new Point(656, 143);
+            btn_buscar.Location = new Point(358, 359);
             btn_buscar.Margin = new Padding(4, 3, 4, 3);
             btn_buscar.Name = "btn_buscar";
             btn_buscar.Size = new Size(93, 29);
@@ -304,7 +293,6 @@
             Controls.Add(lbl_duracao);
             Controls.Add(lbl_preco);
             Controls.Add(lbl_id);
-            Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
             Controls.Add(dgv_tabelaServicos);
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -313,7 +301,6 @@
             Load += Frm_Serviços_Load;
             ((System.ComponentModel.ISupportInitialize)dgv_tabelaServicos).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -323,7 +310,6 @@
 
         private DataGridView dgv_tabelaServicos;
         private PictureBox pictureBox1;
-        private PictureBox pictureBox2;
         private Label lbl_id;
         private Label lbl_preco;
         private Label lbl_duracao;

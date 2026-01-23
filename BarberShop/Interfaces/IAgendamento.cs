@@ -17,5 +17,6 @@ namespace BarberUp.Interface
         public DataTable Selecionar_porCampo(string campo, string valorBusca, string dadosTable);
         public DataTable Selecionar_porDataTime(string campo, DateTime dataInicio, DateTime dataFim);
         public DataTable Selecionar_Join(DateTime? inicio, DateTime? fim);
+        public bool ExisteAgendamento(DateTime _data, int id_cliente, int id_servico);
     }
 }

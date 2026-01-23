@@ -1,5 +1,7 @@
-﻿using BarberShop.Models;
+﻿using BarberShop.Conexao;
+using BarberShop.Models;
 using BarberUp.Interface;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -9,6 +11,7 @@ namespace BarberShop.DAL
 {
     public class DAL_Agendamento : IAgendamento
     {
+        private MySqlConnection _conexao;
         SqlHelper sql = new SqlHelper(
             "Agendamento",
             "TB_AGENDAMENTOS",
@@ -57,6 +60,33 @@ namespace BarberShop.DAL
         public DataTable VerificarAgendamento_porId(int Id)
         {
             return sql.Selecionar_porID(Id);
+        }
+        public bool ExisteAgendamento(DateTime _data, int id_cliente, int id_servico)
+        {
+            this._conexao = new Connection_Factory().getConection();
+            string sql = @"SELECT 1
+            FROM tb_agendamentos a
+            JOIN tb_servicos s ON s.id = a.servico_id
+            WHERE a.servico_id = @servico_id
+              AND a.cliente_id = @cliente_id
+              AND a.datahora_agendamento < DATE_ADD(@dataInicio, INTERVAL s.duracao_minutos MINUTE)
+              AND DATE_ADD(a.datahora_agendamento, INTERVAL s.duracao_minutos MINUTE) > @dataInicio
+            LIMIT 1;
+            ";
+
+
+            using (MySqlCommand cmd = new MySqlCommand(sql, _conexao))
+            {
+                cmd.Parameters.AddWithValue("@dataInicio", _data);
+                cmd.Parameters.AddWithValue("@cliente_id", id_cliente);
+                cmd.Parameters.AddWithValue("@servico_id", id_servico);
+
+                _conexao.Open();
+                using (MySqlDataReader dr = cmd.ExecuteReader())
+                {
+                    return dr.HasRows;
+                }
+            }
         }
     }
 }
