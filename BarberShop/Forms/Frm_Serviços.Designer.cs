@@ -286,7 +286,7 @@
             pnl_datagridservicos.BorderStyle = BorderStyle.Fixed3D;
             pnl_datagridservicos.Controls.Add(dgv_tabelaServicos);
             pnl_datagridservicos.Controls.Add(btn_buscar);
-            pnl_datagridservicos.Location = new Point(1466, 43);
+            pnl_datagridservicos.Location = new Point(918, 51);
             pnl_datagridservicos.Name = "pnl_datagridservicos";
             pnl_datagridservicos.Size = new Size(426, 474);
             pnl_datagridservicos.TabIndex = 25;

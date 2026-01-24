@@ -997,7 +997,7 @@
     <value>2</value>
   </data>
   <data name="pnl_datagridcadastro.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1466, 43</value>
+    <value>888, 43</value>
   </data>
   <data name="pnl_datagridcadastro.Size" type="System.Drawing.Size, System.Drawing">
     <value>426, 474</value>
@@ -15493,7 +15493,7 @@
     <value>Stretch</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1904, 1041</value>
+    <value>1370, 749</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

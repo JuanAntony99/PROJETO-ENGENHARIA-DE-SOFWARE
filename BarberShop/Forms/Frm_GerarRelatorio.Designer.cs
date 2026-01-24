@@ -117,7 +117,7 @@
             button1.FlatAppearance.MouseOverBackColor = Color.White;
             button1.FlatStyle = FlatStyle.Flat;
             button1.ForeColor = Color.FromArgb(255, 128, 0);
-            button1.Location = new Point(141, 880);
+            button1.Location = new Point(92, 659);
             button1.Name = "button1";
             button1.Size = new Size(79, 29);
             button1.TabIndex = 17;
@@ -133,7 +133,7 @@
             panel1.Controls.Add(lbl_agendamento);
             panel1.Controls.Add(btn_salvar);
             panel1.Controls.Add(dtp_Inicio);
-            panel1.Location = new Point(589, 164);
+            panel1.Location = new Point(319, 66);
             panel1.Name = "panel1";
             panel1.Size = new Size(728, 517);
             panel1.TabIndex = 18;
@@ -144,7 +144,7 @@
             AutoScaleMode = AutoScaleMode.Dpi;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1904, 1041);
+            ClientSize = new Size(1370, 749);
             Controls.Add(panel1);
             Controls.Add(button1);
             Controls.Add(pct_icone);
