@@ -60,9 +60,9 @@
             dgv_tabelaServicos.BackgroundColor = Color.FromArgb(255, 128, 0);
             dgv_tabelaServicos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgv_tabelaServicos.GridColor = Color.White;
-            dgv_tabelaServicos.Location = new Point(22, 31);
+            dgv_tabelaServicos.Location = new Point(3, 81);
             dgv_tabelaServicos.Name = "dgv_tabelaServicos";
-            dgv_tabelaServicos.Size = new Size(249, 273);
+            dgv_tabelaServicos.Size = new Size(416, 313);
             dgv_tabelaServicos.TabIndex = 0;
             dgv_tabelaServicos.CellClick += dgv_tabelaServicos_CellClick;
             // 
@@ -235,7 +235,7 @@
             btn_buscar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btn_buscar.BackColor = Color.FromArgb(14, 14, 14);
             btn_buscar.ImeMode = ImeMode.NoControl;
-            btn_buscar.Location = new Point(24, 410);
+            btn_buscar.Location = new Point(21, 416);
             btn_buscar.Margin = new Padding(4, 3, 4, 3);
             btn_buscar.Name = "btn_buscar";
             btn_buscar.Size = new Size(79, 29);
@@ -286,9 +286,9 @@
             pnl_datagridservicos.BorderStyle = BorderStyle.Fixed3D;
             pnl_datagridservicos.Controls.Add(dgv_tabelaServicos);
             pnl_datagridservicos.Controls.Add(btn_buscar);
-            pnl_datagridservicos.Location = new Point(1515, 43);
+            pnl_datagridservicos.Location = new Point(1466, 43);
             pnl_datagridservicos.Name = "pnl_datagridservicos";
-            pnl_datagridservicos.Size = new Size(297, 474);
+            pnl_datagridservicos.Size = new Size(426, 474);
             pnl_datagridservicos.TabIndex = 25;
             // 
             // Frm_Serviços
@@ -297,7 +297,7 @@
             AutoScaleMode = AutoScaleMode.Dpi;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1368, 749);
+            ClientSize = new Size(1904, 1041);
             Controls.Add(pnl_datagridservicos);
             Controls.Add(pictureBox3);
             Controls.Add(pnl_serviços);

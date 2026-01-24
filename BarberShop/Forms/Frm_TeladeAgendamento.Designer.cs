@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_TeladeAgendamento));
             lbl_id = new Label();
             lbl_clienteid = new Label();
@@ -136,23 +136,23 @@
             // 
             dtg_agendamento.BackgroundColor = Color.FromArgb(255, 128, 0);
             dtg_agendamento.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtg_agendamento.Location = new Point(21, 121);
+            dtg_agendamento.Location = new Point(3, 81);
             dtg_agendamento.Name = "dtg_agendamento";
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Window;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
-            dtg_agendamento.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dtg_agendamento.Size = new Size(249, 273);
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dtg_agendamento.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dtg_agendamento.Size = new Size(416, 313);
             dtg_agendamento.TabIndex = 9;
             dtg_agendamento.CellClick += dtg_agendamento_CellClick;
             // 
             // dtp_buscarAgendamento
             // 
-            dtp_buscarAgendamento.Location = new Point(21, 52);
+            dtp_buscarAgendamento.Location = new Point(89, 23);
             dtp_buscarAgendamento.Name = "dtp_buscarAgendamento";
             dtp_buscarAgendamento.Size = new Size(249, 23);
             dtp_buscarAgendamento.TabIndex = 10;
@@ -327,9 +327,9 @@
             pnl_datagridagendamentos.Controls.Add(dtp_buscarAgendamento);
             pnl_datagridagendamentos.Controls.Add(btn_buscar);
             pnl_datagridagendamentos.ForeColor = Color.FromArgb(255, 128, 0);
-            pnl_datagridagendamentos.Location = new Point(1515, 43);
+            pnl_datagridagendamentos.Location = new Point(1466, 43);
             pnl_datagridagendamentos.Name = "pnl_datagridagendamentos";
-            pnl_datagridagendamentos.Size = new Size(295, 474);
+            pnl_datagridagendamentos.Size = new Size(426, 474);
             pnl_datagridagendamentos.TabIndex = 24;
             // 
             // Frm_TeladeAgendamento

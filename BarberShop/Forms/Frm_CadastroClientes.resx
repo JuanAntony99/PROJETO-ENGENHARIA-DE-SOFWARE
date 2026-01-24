@@ -402,13 +402,13 @@
     <value>Top, Right</value>
   </data>
   <data name="dtg_banco.Location" type="System.Drawing.Point, System.Drawing">
-    <value>22, 31</value>
+    <value>3, 81</value>
   </data>
   <data name="dtg_banco.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 3, 4, 3</value>
   </data>
   <data name="dtg_banco.Size" type="System.Drawing.Size, System.Drawing">
-    <value>249, 273</value>
+    <value>416, 313</value>
   </data>
   <data name="dtg_banco.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -922,7 +922,7 @@
     <value>NoControl</value>
   </data>
   <data name="btn_buscar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>24, 410</value>
+    <value>21, 416</value>
   </data>
   <data name="btn_buscar.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 3, 4, 3</value>
@@ -997,10 +997,10 @@
     <value>2</value>
   </data>
   <data name="pnl_datagridcadastro.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1515, 43</value>
+    <value>1466, 43</value>
   </data>
   <data name="pnl_datagridcadastro.Size" type="System.Drawing.Size, System.Drawing">
-    <value>297, 474</value>
+    <value>426, 474</value>
   </data>
   <data name="pnl_datagridcadastro.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
