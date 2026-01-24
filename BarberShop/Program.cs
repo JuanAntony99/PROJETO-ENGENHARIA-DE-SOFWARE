@@ -26,9 +26,9 @@ namespace BarberShop
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            //var login = new Frm_TelaLogin();
+            var login = new Frm_TelaLogin();
 
-            //if (login.ShowDialog() == DialogResult.OK)
+            if (login.ShowDialog() == DialogResult.OK)
             {
                 Application.Run(new Frm_TelaPrincipal());
             }
