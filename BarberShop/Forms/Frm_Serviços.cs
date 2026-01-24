@@ -58,6 +58,7 @@ namespace BarberShop.Forms
 
         private void Frm_Serviços_Load(object sender, EventArgs e)
         {
+            Application.DoEvents();
             AtualizarDataTable();
         }
         private void Buscar()
@@ -238,7 +239,14 @@ namespace BarberShop.Forms
 
         private void btn_buscar_Click(object sender, EventArgs e)
         {
-            Buscar();
+            if (string.IsNullOrWhiteSpace(txt_nome.Text))
+            {
+                AtualizarDataTable();
+            }
+            else
+            {
+                Buscar();
+            }
         }
 
         private void btn_deletar_Click(object sender, EventArgs e)
@@ -263,9 +271,9 @@ namespace BarberShop.Forms
 
         private void btn_menu_Click(object sender, EventArgs e)
         {
-            Frm_TelaPrincipal form = new Frm_TelaPrincipal();
-            form.Show();
-            this.Hide();
+            //Frm_TelaPrincipal form = new Frm_TelaPrincipal();
+            //form.Show();
+            this.Close();
         }
     }
 }

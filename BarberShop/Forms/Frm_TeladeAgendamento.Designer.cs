@@ -245,7 +245,7 @@
             btn_buscar.Name = "btn_buscar";
             btn_buscar.Size = new Size(79, 29);
             btn_buscar.TabIndex = 18;
-            btn_buscar.Text = "Buscar";
+            btn_buscar.Text = "Atualizar";
             btn_buscar.UseVisualStyleBackColor = false;
             btn_buscar.Click += btn_Listar_Click;
             // 

@@ -60,6 +60,7 @@ namespace projeto
 
         private void Frm_CadastroClientes_Load(object sender, EventArgs e)
         {
+            Application.DoEvents();
             AtualizarDataTable();
         }
         private void AtualizarDataTable()
@@ -266,14 +267,21 @@ namespace projeto
 
         private void bnt_buscar_Click(object sender, EventArgs e)
         {
-            Buscar();
+            if (string.IsNullOrWhiteSpace(txt_nome.Text))
+            {
+                AtualizarDataTable();
+            }
+            else
+            {
+                Buscar();
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Frm_TelaPrincipal form = new Frm_TelaPrincipal();
-            form.Show();
-            this.Hide();
+            //Frm_TelaPrincipal form = new Frm_TelaPrincipal();
+            //form.Show();
+            this.Close();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
