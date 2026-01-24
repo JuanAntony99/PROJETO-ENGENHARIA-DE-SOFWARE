@@ -139,7 +139,7 @@
             MaximizeBox = false;
             Name = "Frm_TelaLogin";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "BarberShop";
+            Text = "Login";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);

@@ -44,7 +44,12 @@ namespace BarberShop
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
+        }
+
+        private void bnt_relatorio_Click(object sender, EventArgs e)
+        {
+            AbrirForm(new Frm_GerarRelatorio());
         }
     }
 }

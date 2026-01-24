@@ -183,7 +183,7 @@
             pct_icone.BackColor = Color.Transparent;
             pct_icone.BackgroundImage = (Image)resources.GetObject("pct_icone.BackgroundImage");
             pct_icone.BackgroundImageLayout = ImageLayout.Center;
-            pct_icone.Location = new Point(1258, 565);
+            pct_icone.Location = new Point(1762, 837);
             pct_icone.Name = "pct_icone";
             pct_icone.Size = new Size(116, 167);
             pct_icone.TabIndex = 13;
@@ -327,27 +327,29 @@
             pnl_datagridagendamentos.Controls.Add(dtp_buscarAgendamento);
             pnl_datagridagendamentos.Controls.Add(btn_buscar);
             pnl_datagridagendamentos.ForeColor = Color.FromArgb(255, 128, 0);
-            pnl_datagridagendamentos.Location = new Point(1013, 43);
+            pnl_datagridagendamentos.Location = new Point(1515, 43);
             pnl_datagridagendamentos.Name = "pnl_datagridagendamentos";
             pnl_datagridagendamentos.Size = new Size(295, 474);
             pnl_datagridagendamentos.TabIndex = 24;
             // 
             // Frm_TeladeAgendamento
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleDimensions = new SizeF(96F, 96F);
+            AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = SystemColors.Control;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1368, 749);
+            ClientSize = new Size(1904, 1041);
             Controls.Add(pnl_datagridagendamentos);
             Controls.Add(pnl_agendamentos);
             Controls.Add(btn_voltarmenu);
             Controls.Add(pct_icone);
             ForeColor = Color.Black;
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             Name = "Frm_TeladeAgendamento";
-            Text = "BarberShop";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Agendamentos";
             WindowState = FormWindowState.Maximized;
             Load += Frm_TeladeAgendamento_Load;
             ((System.ComponentModel.ISupportInitialize)dtg_agendamento).EndInit();

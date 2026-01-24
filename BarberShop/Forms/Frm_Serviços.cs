@@ -264,8 +264,8 @@ namespace BarberShop.Forms
         private void btn_menu_Click(object sender, EventArgs e)
         {
             Frm_TelaPrincipal form = new Frm_TelaPrincipal();
-            form.ShowDialog();
-            this.Close();
+            form.Show();
+            this.Hide();
         }
     }
 }

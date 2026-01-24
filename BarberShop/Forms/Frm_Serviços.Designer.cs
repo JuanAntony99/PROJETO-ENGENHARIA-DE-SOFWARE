@@ -149,7 +149,7 @@
             pictureBox3.BackColor = Color.Transparent;
             pictureBox3.BackgroundImage = (Image)resources.GetObject("pictureBox3.BackgroundImage");
             pictureBox3.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox3.Location = new Point(1258, 565);
+            pictureBox3.Location = new Point(1762, 837);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(100, 150);
             pictureBox3.TabIndex = 16;
@@ -250,7 +250,7 @@
             btn_voltarmenu.FlatAppearance.MouseDownBackColor = Color.White;
             btn_voltarmenu.FlatAppearance.MouseOverBackColor = Color.White;
             btn_voltarmenu.FlatStyle = FlatStyle.Flat;
-            btn_voltarmenu.Location = new Point(86, 630);
+            btn_voltarmenu.Location = new Point(83, 632);
             btn_voltarmenu.Name = "btn_voltarmenu";
             btn_voltarmenu.Size = new Size(75, 29);
             btn_voltarmenu.TabIndex = 23;
@@ -286,15 +286,15 @@
             pnl_datagridservicos.BorderStyle = BorderStyle.Fixed3D;
             pnl_datagridservicos.Controls.Add(dgv_tabelaServicos);
             pnl_datagridservicos.Controls.Add(btn_buscar);
-            pnl_datagridservicos.Location = new Point(1013, 43);
+            pnl_datagridservicos.Location = new Point(1515, 43);
             pnl_datagridservicos.Name = "pnl_datagridservicos";
             pnl_datagridservicos.Size = new Size(297, 474);
             pnl_datagridservicos.TabIndex = 25;
             // 
             // Frm_Serviços
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleDimensions = new SizeF(96F, 96F);
+            AutoScaleMode = AutoScaleMode.Dpi;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1368, 749);
@@ -304,8 +304,10 @@
             Controls.Add(btn_voltarmenu);
             ForeColor = Color.FromArgb(255, 128, 0);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             Name = "Frm_Serviços";
-            Text = " BarberShop";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Serviços";
             WindowState = FormWindowState.Maximized;
             Load += Frm_Serviços_Load;
             ((System.ComponentModel.ISupportInitialize)dgv_tabelaServicos).EndInit();

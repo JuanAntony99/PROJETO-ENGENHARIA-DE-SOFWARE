@@ -36,6 +36,8 @@
             lbl_Servicos = new Label();
             lbl_cadastroclientes = new Label();
             bnt_sair = new Button();
+            bnt_relatorio = new Button();
+            label1 = new Label();
             SuspendLayout();
             // 
             // btn_Agendamentos
@@ -91,7 +93,7 @@
             lbl_agendamentos.AutoSize = true;
             lbl_agendamentos.BackColor = Color.Transparent;
             lbl_agendamentos.ForeColor = Color.White;
-            lbl_agendamentos.Location = new Point(45, 387);
+            lbl_agendamentos.Location = new Point(63, 387);
             lbl_agendamentos.Name = "lbl_agendamentos";
             lbl_agendamentos.Size = new Size(99, 19);
             lbl_agendamentos.TabIndex = 3;
@@ -113,7 +115,7 @@
             lbl_cadastroclientes.AutoSize = true;
             lbl_cadastroclientes.BackColor = Color.Transparent;
             lbl_cadastroclientes.ForeColor = Color.White;
-            lbl_cadastroclientes.Location = new Point(30, 113);
+            lbl_cadastroclientes.Location = new Point(63, 113);
             lbl_cadastroclientes.Name = "lbl_cadastroclientes";
             lbl_cadastroclientes.Size = new Size(132, 19);
             lbl_cadastroclientes.TabIndex = 5;
@@ -126,7 +128,7 @@
             bnt_sair.FlatAppearance.MouseOverBackColor = Color.White;
             bnt_sair.FlatStyle = FlatStyle.Flat;
             bnt_sair.ForeColor = Color.FromArgb(255, 128, 0);
-            bnt_sair.Location = new Point(68, 492);
+            bnt_sair.Location = new Point(68, 672);
             bnt_sair.Name = "bnt_sair";
             bnt_sair.Size = new Size(75, 29);
             bnt_sair.TabIndex = 6;
@@ -134,13 +136,41 @@
             bnt_sair.UseVisualStyleBackColor = false;
             bnt_sair.Click += button1_Click;
             // 
+            // bnt_relatorio
+            // 
+            bnt_relatorio.BackColor = Color.Transparent;
+            bnt_relatorio.BackgroundImage = (Image)resources.GetObject("bnt_relatorio.BackgroundImage");
+            bnt_relatorio.BackgroundImageLayout = ImageLayout.Zoom;
+            bnt_relatorio.FlatAppearance.BorderSize = 0;
+            bnt_relatorio.FlatStyle = FlatStyle.Flat;
+            bnt_relatorio.ForeColor = Color.Transparent;
+            bnt_relatorio.Location = new Point(68, 475);
+            bnt_relatorio.Name = "bnt_relatorio";
+            bnt_relatorio.Size = new Size(61, 58);
+            bnt_relatorio.TabIndex = 7;
+            bnt_relatorio.UseVisualStyleBackColor = false;
+            bnt_relatorio.Click += bnt_relatorio_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(68, 536);
+            label1.Name = "label1";
+            label1.Size = new Size(70, 19);
+            label1.TabIndex = 8;
+            label1.Text = "Relatórios";
+            // 
             // Frm_TelaPrincipal
             // 
-            AutoScaleDimensions = new SizeF(9F, 19F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleDimensions = new SizeF(96F, 96F);
+            AutoScaleMode = AutoScaleMode.Dpi;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1368, 749);
+            Controls.Add(label1);
+            Controls.Add(bnt_relatorio);
             Controls.Add(bnt_sair);
             Controls.Add(lbl_cadastroclientes);
             Controls.Add(lbl_Servicos);
@@ -151,9 +181,10 @@
             Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(4);
+            MaximizeBox = false;
             Name = "Frm_TelaPrincipal";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "BarberShop";
+            Text = "Menu";
             WindowState = FormWindowState.Maximized;
             Load += Frm_TelaPrincipal_Load;
             ResumeLayout(false);
@@ -169,5 +200,7 @@
         private Label lbl_Servicos;
         private Label lbl_cadastroclientes;
         private Button bnt_sair;
+        private Button bnt_relatorio;
+        private Label label1;
     }
 }

@@ -272,8 +272,8 @@ namespace projeto
         private void button1_Click(object sender, EventArgs e)
         {
             Frm_TelaPrincipal form = new Frm_TelaPrincipal();
-            form.ShowDialog();
-            this.Close();
+            form.Show();
+            this.Hide();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)

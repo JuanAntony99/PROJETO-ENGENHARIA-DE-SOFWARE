@@ -40,5 +40,17 @@ namespace BarberShop.Forms
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Frm_TelaPrincipal form = new Frm_TelaPrincipal();
+            form.Show();
+            this.Hide();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

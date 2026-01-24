@@ -51,10 +51,12 @@
             btn_voltarmenu = new Button();
             pnl_cadastroclientes = new Panel();
             pnl_datagridcadastro = new Panel();
+            pct_icone = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dtg_banco).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             pnl_cadastroclientes.SuspendLayout();
             pnl_datagridcadastro.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pct_icone).BeginInit();
             SuspendLayout();
             // 
             // txt_nome
@@ -230,16 +232,25 @@
             resources.ApplyResources(pnl_datagridcadastro, "pnl_datagridcadastro");
             pnl_datagridcadastro.Name = "pnl_datagridcadastro";
             // 
+            // pct_icone
+            // 
+            pct_icone.BackColor = Color.Transparent;
+            resources.ApplyResources(pct_icone, "pct_icone");
+            pct_icone.Name = "pct_icone";
+            pct_icone.TabStop = false;
+            // 
             // Frm_CadastroClientes
             // 
             resources.ApplyResources(this, "$this");
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = SystemColors.Control;
+            Controls.Add(pct_icone);
             Controls.Add(pnl_datagridcadastro);
             Controls.Add(pnl_cadastroclientes);
             Controls.Add(btn_voltarmenu);
             Controls.Add(pictureBox2);
             ForeColor = Color.FromArgb(255, 128, 0);
+            MaximizeBox = false;
             Name = "Frm_CadastroClientes";
             WindowState = FormWindowState.Maximized;
             Load += Frm_CadastroClientes_Load;
@@ -248,6 +259,7 @@
             pnl_cadastroclientes.ResumeLayout(false);
             pnl_cadastroclientes.PerformLayout();
             pnl_datagridcadastro.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pct_icone).EndInit();
             ResumeLayout(false);
             PerformLayout();
 
@@ -277,6 +289,7 @@
         private Button btn_voltarmenu;
         private Panel pnl_cadastroclientes;
         private Panel pnl_datagridcadastro;
+        private PictureBox pct_icone;
     }
 }
 
